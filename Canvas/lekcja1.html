@@ -1,0 +1,67 @@
+<html>
+    <head>
+
+    </head>     
+    <body>
+        <canvas width="1000" height="2000" id="canvas">
+
+        </canvas>
+        <script>
+            const canvas = document.querySelector("#canvas")
+            const ctx = canvas.getContext("2d");
+            //pierwiastek
+            ctx.beginPath();
+            ctx.moveTo(20, 20); //stawiamy piórko w punkcie x: 20 y: 20
+            ctx.lineTo(30, 60); //zaczynamy rysować niewidzialną linię do x : 30, y: 40
+            ctx.lineTo(35, 10); //kolejna linia
+            ctx.lineTo(100, 10); //i kolejna
+            ctx.lineTo(100, 25)
+            ctx.stroke(); //po zakończeniu rysowania obrysowujemy linię
+
+            //Gora cyfry 9
+            ctx.beginPath();
+            ctx.moveTo(55, 20);
+            ctx.lineTo(75, 20);
+            ctx.lineTo(75, 35);
+            ctx.lineTo(55, 35);
+            ctx.lineTo(55, 20)
+            //dol cyfry 9
+            ctx.moveTo(75, 35);
+            ctx.lineTo(55, 65);
+            ctx.stroke();
+
+            //rowna sie
+            ctx.beginPath();
+            ctx.moveTo(125, 30);
+            ctx.lineTo(150, 30);
+            ctx.moveTo(125, 40);
+            ctx.lineTo(150, 40);
+            ctx.stroke();
+
+            //cyfra 3
+            ctx.beginPath();
+            ctx.moveTo(175, 20);
+            ctx.lineTo(200, 20);
+            ctx.lineTo(200, 35);
+            ctx.lineTo(175, 35);
+            ctx.moveTo(200, 35);
+            ctx.lineTo(200, 50);
+            ctx.lineTo(175, 50);
+            ctx.stroke();
+
+            //losowy obrazek
+            let a = Math.floor(Math.random() * (500-300) + 300)
+            let b = Math.floor(Math.random() * (700-300) + 300)
+            console.log(a, b)
+            ctx.beginPath();
+            ctx.moveTo(a, b);
+            for(i = 0; i < 20; i++){
+                let c = Math.floor(Math.random() * (500-300) + 300)
+                let d = Math.floor(Math.random() * (700-300) + 300)
+                console.log(c, d)
+                ctx.lineTo(c, d);
+            }
+            ctx.stroke();
+        </script>
+    </body>
+</html>
