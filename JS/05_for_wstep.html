@@ -1,0 +1,52 @@
+
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf8">
+		<title>JavaScript 05 FOR - działania</title>
+		<script>
+			for(i = 0; i < 10; i++){ //WYKONA SIE 10 RAZY, NIE PONIEWAZ 10<10 i wtedy kończy się ponieważ jest fałsz
+				document.write(i+ ' ALA MA KOTA<br>');  //i+ ' TEKST' ponumeruje od 0 do 9 
+			}
+			for(i = 10; i > 0; i--){ //WYKONA SIE 10 RAZY, NIE PONIEWAZ 10<10 i wtedy kończy się ponieważ jest fałsz
+				document.write(`${i} ALA MA KOTA<br>`);  //i- ' TEKST' ponumeruje od 10 do 1
+			}
+			for(i = 0; i < 7; i++){
+				const r = Math.floor(Math.random() * 256); //0-255
+				const g = Math.floor(Math.random() * 256);
+				const b = Math.floor(Math.random() * 256);
+				//rgb(255,255,255); rgb(200,200,200); rgb(23,200,34)
+				//document.write('<h1 style="font-size: 50px; text-align: center; color: rgb(' + r + ', ' + g + ', ' + b + ')">ZS nr 2</h1>');
+				document.write(`<h1 style="font-size: 50px; text-align: center; color: rgb(${r}, ${g}, ${b})">ZS nr 2</h1>`);
+			}
+
+			document.write('<h1>');
+			let suma = 0;
+			for(i = 1; i < 6; i++) {
+				const liczba = parseInt(prompt(`Podaj liczbę nr ${i}`));
+				suma += liczba; //suma = suma + liczba
+				/* JEZELI IFEM
+				if(liczba % 2 == 1)
+					kolor = 'green';
+				else
+					kolor = 'red';
+				*/
+				const kolor = liczba % 2 == 1 ? 'green':'red';
+				document.write(`<span style="color: ${kolor};"> ${liczba}</span>,`);
+			}
+			document.write(`Suma = ${suma}`);
+			document.write('</h1>');
+
+			const odIle = prompt("podaj start:", 10);
+			const krok = prompt("Podaj krok:", 2);
+			const stop = odIle + 10 * krok;
+			for(i = odIle; i < stop; i += krok)
+				document.write(i+ ',');
+			//INNY SPOSOb
+
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

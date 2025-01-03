@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf8">
+		<title>JavaScript 05 FOR - działania</title>
+		<style>
+			h1 {
+  				color: black;
+  				background: linear-gradient(90deg, red, orange, yellow, green, blue, purple);
+  				background-clip: text;
+				position: relative;
+				left: 375px;
+				font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  				-webkit-background-clip: text;
+			}
+			h1:hover {
+ 				 color: transparent;
+ 				 transition: 500ms ease;
+			}
+			table {
+				width: 10%;
+				margin: 2em auto;
+				border-collapse: collapse;
+				background: linear-gradient(#e66465, #9198e5);
+				border: 1px solid rgb(60, 111, 122);
+				color:rgb(37, 85, 74);
+				width: 10px;
+				height: 10px;
+				font-style: oblique;
+				font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+			}
+			table:hover {
+				width: 10%;
+				transition: transform 250ms;
+				transform: scale(1.1);
+				transition-timing-function: linear;
+				margin: 2em auto;
+				border-collapse: collapse;
+				background: linear-gradient(#d8b554, #6169c4);
+				border: 1px solid rgb(134, 103, 43);
+				color:rgb(83, 88, 72);
+				width: 15px;
+				height: 15px;
+				font-style: oblique;
+				font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+			}
+			td, th {
+				border: 1px solid rgb(61, 110, 121);
+				text-align: center;
+				padding: 0.5em;
+			}
+		</style>
+
+	</head>
+	<body>
+			<h1> TABLICZKA MNOZENIA </h1>
+		<script>
+			let ileK = 10;
+			let ileW = 10;
+			document.write('<table>');
+			for(w = 1; w <= ileW; w++) {
+				document.write('<tr>');
+					for(k = 1; k <= ileK; k++) {
+						let ile = w * k;
+						document.write(`<td> ${ile} </td>`)
+					}
+					document.write('</tr>');
+			}
+			document.write('</table>');
+		</script>
+	</body>
+</html>

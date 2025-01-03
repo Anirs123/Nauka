@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf8">
+		<title>JavaScript 05 FOR - działania</title>
+		<style>
+			body{
+				background-color: white;
+			}
+			.p1{
+				color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="p1">Witaj na stronie JS</h1>
+		<script>
+			function nazwafunkcji() {
+				document.write('<h1>WITAJ W KOLONII</h1>');
+			}
+
+			nazwafunkcji();
+
+			//funkcja z argumentem(parametrem)
+			function nazwafunkcji2(kolor) {
+				document.write('<h1 style="color: ' + kolor + '""> tekst </h1>');
+			}
+			
+			// alert(kolor); //wyswtieli sie blad bo nie mamy okreslonego koloru
+			// nazwafunkcji() takze wyswitli blad
+
+			nazwafunkcji2('red'); //wyswitli nam napis czerwony
+
+			let k = 'red';
+			nazwafunkcji2(k); //wyswitli nam napis czerwony
+
+			function nazwafunkcji3(imie, kolor) {
+				return '<h1 style="color: ' + kolor + '">Witaj w JS-' + imie + '</h1>';
+			}
+
+			document.write(nazwafunkcji3('Janusz', 'green')); //zwroci sie do funkcji aby wyszukac do w niej było i doda to
+			//INTERPRETUJE JANUSZ JAKO IMIE A GREEN JAKO KOLOR 
+			let powitanie = nazwafunkcji3('Euzabia', k);
+			document.write(powitanie);
+
+			alert(nazwafunkcji3('Janusz', 'green'));
+
+			//Pierwszy sposob na proszednie o imie i kolor i wyswietlenie
+			const color = prompt('podaj kolor');
+			const name = prompt('podaj imie');
+			let powitanie2 = nazwafunkcji3(name, color)
+			document.write(powitanie2);
+
+			//Drugi sposob na proszednie o imie i kolor i wyswietlenie
+			document.write(nazwafunkcji3(prompt('podaj imie', 'jasiu'), prompt('podaj kolor', 'red')));
+		</script>
+		<button onclick="nazwafunkcji();">POWITANIE</button>
+
+		<!-- PO KLIKNIECIU TEKSTU WYSWITLI ALERT -->
+		<h1 onclick="alert('WITAJ')">POWITANIE</h1>
+		</body>
+</html>

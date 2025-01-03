@@ -1,0 +1,49 @@
+.box1{
+    background-color: teal;
+    border: 1px solid yellow;
+    padding: 10px;
+    text-align: center;
+}
+.container{
+    display: grid;
+    grid-template-columns: 100px auto 100px;
+    /* tyle ile auto tyle kolumn */
+}
+.container2{
+    display: grid;
+    grid-template-rows: 100px auto 100px;
+    /* tyle ile auto tyle kolumn */
+}
+.container3 > div{
+    background-color: teal;
+    border: 1px solid yellow;
+    padding: 10px;
+    text-align: center;
+}
+.container3{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* gap: 10px;  */
+    column-gap: 10px;
+    row-gap: 2px;
+    /* gap to przerwa */
+}
+.container3 .box1{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    /* gdy mamy 3 kolumny to zaczynamy od lewej krawedzi do prawej czyli mamy 4 na end */
+}
+.container3 .box5{
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+.container3 .box2{
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.container3 .box6{
+    /* grid-column-start: 1;
+    grid-column-end: 4; */
+    grid-column: 1/4;
+    /* 1/4 oznacza to  samo co start 1 i end 4 */
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins";
+        }
+        body{
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .content{
+            position: relative;
+        }
+        .content h2{
+            position: absolute;
+            color: white;
+            font-size: 8em;
+            transform: translate(-50%, -50%);
+        }
+        .content h2:nth-child(1){
+            color: transparent;
+            -webkit-text-stroke: 2px #03a9f4;
+        }
+        .content h2:nth-child(2){
+            color: #03a9f4;
+            animation: ruch 2s ease-in-out infinite;
+        }
+        @keyframes ruch{
+            0%, 100%{
+                clip-path: polygon(1% 54%, 6% 46%, 15% 39%, 25% 39%, 29% 47%, 31% 53%, 33% 58%, 38% 58%, 42% 54%, 47% 45%, 54% 35%, 58% 34%, 65% 39%, 69% 48%, 71% 56%, 75% 63%, 81% 63%, 86% 58%, 89% 50%, 96% 42%, 98% 38%, 100% 100%, 1% 100%);
+            }
+            50%{
+                clip-path: polygon(1% 44%, 6% 38%, 12% 33%, 16% 30%, 22% 33%, 27% 37%, 31% 42%, 34% 48%, 38% 52%, 45% 51%, 50% 48%, 54% 43%, 58% 37%, 62% 31%, 67% 29%, 72% 35%, 77% 45%, 79% 54%, 96% 36%, 96% 32%, 99% 29%, 99% 98%, 0% 99%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>Hello</h2>
+        <h2>Hello</h2>
+    </div>
+</body>
+</html>

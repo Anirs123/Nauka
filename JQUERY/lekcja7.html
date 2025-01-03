@@ -1,0 +1,100 @@
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script>
+            $(function(){
+                $('#b1').click(function (){  
+                    const kolor = prompt('Podaj kolor' , 'red');
+                    // alert(kolor)
+                    $('#d2 > p:first').css('color', kolor) //pierwszy p zmienia na kolor podany
+                })
+                $('#b2').mouseenter( function (){
+                    $('#d2 > p:last').css('color', 'red')
+                  })
+                $('#b2').mouseleave( function (){
+                    $('#d2 > p:last').css('color', 'black')
+                })
+                $('#b3').click(function () {
+                    const ileP = $('p').length;
+                    const nr = prompt('Który akapic zaznaczyc (1-' + ileP + ')', '2')
+                    if(nr == parseInt(nr) && nr > 0 && nr <= ileP) //parseint usuwa wszystko i zostawia sama cyfre
+                        $('p').eq(nr-1).css('color', 'red');
+                    else
+                        alert('złe dane')
+                  })
+                  $('#b4').click(function() {
+                    let wys = parseInt($('p').css('font-size'));
+                    if(wys < 20){
+                        wys += 2;
+                        $('p').css('font-size', wys + 'px')
+                    }
+                  })
+                  $('#b5').click(function (){
+                    let wys = parseInt($('p').css('font-size'));
+                    if(wys > 6){
+                        wys -= 2;
+                        $('p').css('font-size', wys + 'px')
+                    }
+                  })
+                  $('#b6').click(function(){
+                    const odp = confirm('jestes pewien usune wszyskie akapity!');
+                    if(odp) //confirm to potwierdzenie z prompta
+                        $('p').remove()
+                  })
+                  $('#b7').click(function(){
+                    const ileP = $('p').length;
+                    const akapit = prompt('Podaj akapit');
+                    const odp = prompt('Podaj tresc');
+                    if(akapit == parseInt(akapit) && akapit > 0 && akapit <= ileP){
+                        $('p').eq(akapit-1).text(odp);
+                    }
+                    else{
+                        alert('błędne dane akapitu')
+                    }
+                  })
+            }); //end jQ
+        </script>
+            <style>
+                #d1 {
+                    border: 1px solid red;
+                    padding: 10px;
+                    background-color: green;
+                }
+                
+                #d2 {
+                    border: 1px solid rgb(0, 89, 255);
+                    padding: 10px;
+                    background-color: yellow;
+                }
+                
+                button {
+                    margin: 10px;
+                }
+            </style>
+        </head>
+        <body>
+            <div id='d1'>
+                <div id='d2'>
+                    <p>Akapit nr 1</p>
+                    <p>Akapit nr 2</p>
+                    <p>Akapit nr 3</p>
+                    <p>Akapit nr 4</p>
+                    <p>Akapit nr 5</p>
+                    <p>Akapit nr 6</p>
+                    <p>Akapit nr 7</p>
+                    <p>Akapit nr 8</p>
+                    <p>Akapit nr 9</p>
+                    <p>Akapit nr 10</p>
+                    <p>Akapit nr 11</p>
+                    <p>Akapit nr 12</p>
+                </div>
+            </div>
+            <button id="b1">#1</button>
+            <button id="b2">#2</button>
+            <button id="b3">#3</button>
+            <button id="b4">#4</button>
+            <button id="b5">#5</button>
+            <button id="b6">#6</button>
+            <button id="b7">#7</button>
+</html>

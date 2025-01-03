@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf-8">
+		<title>Zgadula</title>
+	</head>
+	<body>
+		<div class="glowny">
+			<fieldset>
+				<legend><h1>TESTULA</h1></legend>
+				<br>
+				<p>TESTER HASEŁ</p><br><br>
+				<p>Podaj hasło:</p><input type="text" id="liczba"><button id="sprawdz">sprawdź</button>
+				<p id="info">TWÓJ POZIOM HASŁA => </p>
+			</fieldset>
+		</div>
+		<script>
+			//dobry ponad 7 znakow i conajniej 1 cyfra
+			//srednie 4-6 znakow i conajmniej 1 cyfra
+			//slabe reszata
+			const sprawdz = document.getElementById("sprawdz");
+			const info = document.getElementById("info");
+			const podane = document.getElementById("liczba").value;
+
+			sprawdz.addEventListener("click", sprawdzanie =>{
+				if(podane.length > 4 && podane.lenght < 7){
+					info.innerText = "TWÓJ POZIOM HASŁA => Średnie";
+				}
+				if(podane.length > 7){
+					info.innerText = "TWÓJ POZIOM HASŁA => Dobry";
+				}
+				if(podane.length < 4){
+					info.innerText = "TWÓJ POZIOM HASŁA => Słaby";
+				}
+			})
+		</script>
+		<style>
+			p{
+				display: inline;
+			}
+			body{
+				background-color: black;
+				color: orange;
+			}
+			.glowny{
+				width: 650px;
+				height: 100px;
+				position: absolute;
+				left: 650px;
+				top: 100px;
+			}
+			.drugi{
+				width: 675px;
+				height: 100px;
+				position: absolute;
+				left: 638px;
+				top: 300px;
+			}
+			button{
+				background-color: orange;
+				font-family: Arial, Helvetica, sans-serif;
+				color: black;
+			}
+			input{
+				background-color: black;
+				color:orange;
+			}
+		</style>
+	</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf-8">
+		<title>Zgadula</title>
+	</head>
+	<body>
+		<div class="glowny">
+			<fieldset>
+				<legend><h1>ZGADULA</h1></legend>
+				<br>
+				<p>Została wylosowana liczba z zakresu od 0-100. Zgadnij ją! :)</p><br><br>
+				<p>Podaj liczbę:</p><input type="number" id="liczba"><p id="strzelaj"> strzelaj</p> <button id="sprawdz">sprawdź</button><button id="losuj">losuj nową</button>
+			</fieldset>
+		</div>
+		<div class="drugi">
+			<fieldset>
+				<legend>Zgadywane liczby</legend>
+				<br>
+				<p id="podawanecyfry"></p>
+			</fieldset>
+		</div>
+		<script>
+			let wygenerowana = parseInt(Math.floor(Math.random() * (100 - 0) + 0));
+			console.log(wygenerowana);
+			
+			const sprawdz = document.getElementById("sprawdz");
+			const losuj = document.getElementById("losuj");
+			const strzelaj = document.getElementById("strzelaj");
+			const podawanecyfry = document.getElementById("podawanecyfry");
+
+			losuj.addEventListener("click", losowanie => {
+				wygenerowana = parseInt(Math.floor(Math.random() * (100 - 0) + 0));
+				console.log(wygenerowana)
+			});
+
+			sprawdz.addEventListener("click", sprawdzanie => {
+				let cyfrapodana = document.getElementById("liczba").value;
+				if(cyfrapodana == wygenerowana){
+					strzelaj.innerText = " BRAWO WYGRAŁEŚ!"
+				}
+				else{
+					podawanecyfry.innerText += " " + cyfrapodana + ", "
+					if(cyfrapodana > wygenerowana){
+						strzelaj.innerText = " Za duża cyfra"
+					}
+					else{
+						strzelaj.innerText = " Za mała cyfra"
+					}
+				}
+			})
+		</script>
+		<style>
+			p{
+				display: inline;
+			}
+			body{
+				background-color: black;
+				color: orange;
+			}
+			.glowny{
+				width: 650px;
+				height: 100px;
+				position: absolute;
+				left: 650px;
+				top: 100px;
+			}
+			.drugi{
+				width: 675px;
+				height: 100px;
+				position: absolute;
+				left: 638px;
+				top: 300px;
+			}
+			button{
+				background-color: orange;
+				font-family: Arial, Helvetica, sans-serif;
+				color: black;
+			}
+			input{
+				background-color: black;
+				color:orange;
+			}
+		</style>
+	</body>
+</html>

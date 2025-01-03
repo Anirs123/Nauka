@@ -1,0 +1,207 @@
+
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf8">
+		<title>JavaScript - działania</title>
+		<script src="plik_ze_skryptem.js"></script>
+		<script>
+			/* -------------------------------
+					copyright by Jacquar
+				      skrypt podstaw 
+					 http://kursjs.pl
+			-------------------------------- */
+			//+ - dodawanie np.:
+			var a = 10;
+			var b = 3;
+			var c = a + b;
+			document.write('10 + 3 = ' + c + '<br>'); 	// 13  
+
+			a = "koty";
+			b = 2;
+			c = a + b;
+			
+			document.write('"koty " + 2 = ' + c + '<br>')	// = "koty2"  
+			
+			a = "37a";
+			c = a + b;
+			document.write('"37a" + 2 = ' + c + '<br>')	//37a2
+			
+			c = parseInt(a) + b;
+			document.write('parseInt("37a4") + 2 = ' + c + '<br>') //39
+			
+			a = "37a4";
+			c = parseInt(a) + b;
+			document.write('parseInt("37") + 2 = ' + c + '<br>') //39
+			a = "s37";
+			c = parseInt(a) + b;
+			document.write('parseInt("s37") + 2 = ' + c + '<br>'); //NaN
+			
+			//- - odejmowanie np.:
+			document.write('37 - 3 = ');
+			document.write(37 - 3 + '<br>');		//= 34  
+			document.write('"35" - 3 = ');
+			document.write("35" - 3 + '<br>');	//= 32  
+			document.write('"35a" - 2 = ');
+			document.write("35a" - 2 + '<br>') ;	//= NaN 
+			a = parseInt('35a');
+			c = a - b
+			document.write('parseInt("35a") - 2 = ');
+			document.write(c + '<br>');
+/*			
+			/// - dzielenie np.:
+			9 / 3 = 3  
+			9 / 2 = 4.5  
+			"9" / 2 = 4.5  
+			"9i" / 2 = NaN  			
+			//* - mnożenie np.:
+			9 * 2 = 18  
+			"9" * 2 = 18  
+			"9p" * 2 = NaN  
+			
+			a = '37';
+			b = '3';
+			c = a - b; // 34
+			
+			//% - modulo (reszta z dzielenia) np.:
+*/
+			a = 9;
+			b = 2;
+			c = a % b;
+			document.write('9 % 2 = ') //1 
+			document.write(c + '<br>');			
+			a = "9"
+			
+			document.write('"9" % 2 = ');	//1
+			document.write(c + '<br>');	
+			a = -8
+			b = 3
+			c = a % b;
+			document.write('-8 % 3 = ');	//-2
+			document.write(c + '<br>');	
+			a = "9i"
+			b = 2
+			c = a % b;
+			document.write('"9i" % 2 = ')	//NaN
+			document.write(c + '<br>');	
+
+			//- - negacja np.:
+			
+			var zmienna = 5  
+			var zmienna2 = -zmienna;  
+			
+			//++ - inkrementacja np.:
+			var zmienna = 10;  
+			zmienna++;
+			var zmienna2 = "98"  
+			zmienna2++;
+			var zmienna3 = "napis"  
+			zmienna3++; // zwróci NaN
+				  
+			a = 5;
+			b = 3;
+			d = a++; //5	najpierw weź zawartość a
+			e = ++b // 6	najpierw zwiększ b i przypisz zmiennej
+			c = a++ - --b;
+			document.write('a++ - --b = ')
+			document.write('a++ - --b = ')
+			document.write(c + '<br>')
+			document.write('a = ' + a + '<br> b = ' + b + '<br>')
+			a = 5; b = 5;
+			c = a++ + b-- + a;
+			document.write('a++ + b-- + a = ' + c + '<br>')
+			/*
+			a=7 b = 3
+			c = a++ - b++
+			
+			a = 3 b = 7
+			c = --a + b++
+			
+			a = b = 3
+			c = a++ - b++
+			
+			*/
+			a = b = 3
+			c = a++ - b++
+			document.write(c + '<br>')
+			//-- - dekrementacja np.:
+			var zmienna = 10;  
+			zmienna-- //zwróci 9
+			
+			var zmienna2 = "98"  
+			zmienna2-- //zwróci 97  
+			  
+			var zmienna3 = "napis"  
+			zmienna3-- //zwróci NaN 
+
+			//Operatory Przypisania
+			// =, += -= *= /= %=
+
+			var zmienna = 2  	  
+			var zmienna2 = "napis"  			  
+			var zmienna3 = zmienna + zmienna2 ;
+			var cena = 7;
+			zmienna += cena // zmienna = zmienna + cena  
+			  
+			var zmienna = "9";  
+			zmienna += "3" //93 
+			document.write('"9" += 3 ->' +zmienna + '<br>')
+			
+			var zmienna = "mały ";  
+			zmienna += "napis" //zmienna = "mały napis"
+			
+			zmienna -= cena // zmienna = zmienna - cena  
+			
+			var zmienna = "9";  
+			zmienna -= "3" //zwróci 6  
+
+			var zmienna = "mały ";  
+			zmienna -= "napis" //zwróci NaN  
+			
+			zmienna *= cena // zmienna = zmienna * cena  
+			
+			var zmienna = "9";    
+			zmienna *= "3" //zwróci 9  
+
+			var zmienna = "mały ";  
+			zmienna *= "napis" //zwróci NaN 
+
+			zmienna /= cena // zmienna = zmienna / cena  
+
+			var zmienna = "9";  
+			zmienna /= "3" //zwróci 3  
+ 
+			var zmienna = "mały ";  
+			zmienna /= "napis" //zwróci NaN 
+
+			zmienna %= cena //zmienna = zmienna % cena  
+			var zmienna = "9";  
+			  
+			zmienna %= "2" //zwróci 1  
+			var zmienna = "mały ";  
+			  
+			zmienna %= "napis" //zwróci NaN  
+
+			//systemy liczenia
+			var h = parseInt("10", 10)+ "<br>";	//10
+		    var i = parseInt("010")+ "<br>";	//10
+    		var j = parseInt("10", 8)+ "<br>";	//8
+    		var k = parseInt("0xf0")+ "<br>";	//240
+    		var l = parseInt("ff", 16)+ "<br>";	//255
+    		document.write("zamiana systemów liczenia: " + parseInt("101", 10) + "<br>");
+
+    		 a = 8;
+			 b = 34;
+			var msg = `The sum is ${a+b}`;
+			console.log(msg);
+		</script>
+	</head>
+	<body>
+		<h1>JavaScript - 01 działania</h1>
+		<h2 style="color: red; text-align: center;">
+			<script>
+				document.write(1795 + 248);
+			</script>
+		</h2>
+	</body>
+</html>

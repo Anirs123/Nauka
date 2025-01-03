@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf8">
+		<title>JavaScript 05 FOR - działania</title>
+		<style>
+
+		</style>
+
+	</head>
+	<body>
+			<h1> xxx </h1>
+		<script> // tablice (szufladki) ( macierze ) liczymy od 0 jak wszystko czyli tworzymy tablice z 10 szufladkami to mamy szufladki od 0 do 9
+			let t1 = new Array(); //gumowa szufladka czyli mozna dodac jedna szufladke np a[5] = 17 i jest to pierwsza szufladka ktora jest piąta
+			let t2 = []; // mozna pominac new array gdy damy kwadratowe
+			let t3 = new Array(10); //tworzy jedną szufladkę z daną zmienna w srodu 10
+			let t4 = new Array("imie", "imie2", "imie3"); //utworzy 3 szufladki i kazde bedzie mialo swoje imie 
+			let t5 = ["imie", "imie2", "imie3"]; // mozna pominac new array gdy damy kwadratowe
+
+			document.write(`1 element tablicy t5: ${t5[1]} <br>`); //wyswietli 1 szufladke w 5 tabeli z informacja ktora sie w niej znajduje czyli "imie2"
+			
+			let tablica = new Array('imie1', 'imie2', 'imie3', 'imie4', 'imie5');
+			tablica[3] = "Piotr";
+			tablica[4] = "Grzegorz";
+			
+			document.write(`dodawanie imion do tablicy: ${tablica[1]} i ${tablica[4]} <br>`);
+
+			let imiona = new Array('imie', 'imie2', 'imie3', 'imie4', 'imie5');
+			let dl = imiona.length;
+			for (x = 0; x < dl; x++){
+				document.write(`${imiona[x]} <br>`);
+			}
+//tablica asocjacyjna
+			Tablica = new Array();
+			Tablica['chomik'] = "radioaktywny";
+			Tablica['kot'] = "red";
+			Tablica['pies'] = "blue";
+			alert(Tablica["pies"]); //wyswietli blue
+			Tablica['rybka'] = "wanda";
+
+			Tablica = [];
+			Tablica[0] = ['imie1', 'wiek1'];
+			Tablica[1] = ['imie2', 'wiek2'];
+			Tablica[2] = ['imie3', 'wiek3'];
+
+			document.write(`<br> imie: ${Tablica[0][0]}, wzrost: ${Tablica[0][1]}`);
+			document.write(`<br> imie: ${Tablica[1][0]}, wzrost: ${Tablica[1][1]}`);
+			document.write(`<br> imie: ${Tablica[2][0]}, wzrost: ${Tablica[2][1]}`);
+
+			//operacja join sklejanie elementow tablicy do zmiennej tekstowej
+			tablica = new Array("imie1", "imie2", "imie3");
+			document.write(`${tablica.join()} <br>`); //wypisze sie "imie1,imie2,imie3"
+			document.write(`${tablica.join(" ")} <br>`); // wypisze sie "imie1 imie2 imie3"
+			document.write(`${tablica.join(" + ")} <br>`); //wypisze "imie1 + imie2 + imie3"
+
+			//odwrocenie elementow tablicy
+			tablica = new Array("Numer 1", "Numer 2", "Numer 3", "Numer 4");
+			document.write(`<strong>Przed:</strong> ${tablica.join()} <br>`);
+			tablica.reverse();
+			document.write(`<strong>Po:</strong> ${tablica.join()} <br>`);
+
+			//sortowanie tablicy
+			Tablica = new Array("imie1", "imie2", "imie3", "imie4", "imie5");
+			Tablica.sort();
+			document.write(Tablica.join() + '<br>'); //wypisze sie "imie1,imie2,imie3,imie4,imie5"
+
+			//tworzymy funkcje do sortowania liczb
+			function porownajliczby(a, b) {
+				return a - b
+			}
+
+			Tablica = Array(100,25,10,310,-1200,-400);
+
+			document.write(`Bez sortowania:`);
+			document.write(Tablica.join() + `<br>`);
+
+			document.write(`Tablica.sort():`);
+			Tablica.sort();
+			document.write(Tablica.join() + `<br>`);
+
+			document.write(`Tablica.sort(porownajLiczby):`);
+			Tablica.sort(porownajliczby);
+			document.write(Tablica.join() + '<br>');
+
+			Tablica = new Array('imie1', 'imie2', 'imie3');
+			//tworzenie nowej tablicy przez wycinanie fragmentu innej tablicy
+			var Tablica_2 = Tablica.slice(0, 1);
+			document.write("slice(0, 1): " + Tablica_2.join() + "<br>"); //wypisze sie imie1
+
+			var Tablica_2 = Tablica.slice(0, 2);
+			document.write(Tablica_2.join() + '<br>'); //wypisze sie imie1 i imie2
+
+			var Tablica_2 = Tablica.slice(0, 5);
+			document.write(Tablica_2.join() + '<br>'); //wypisze sie imie1 i imie2 i imie3
+
+			var Tablica_2 = Tablica.slice(2, 1);
+			document.write(Tablica_2.join() + '<br>'); //wypisze sie imie3
+			
+			//dodawanie ostatniego elementu do tablicy
+			tablica = new Array('imie1', 'imie2', 'imie3');
+			document.write(tablica + '- tablica przed POP<br>');
+			var dlugosc = tablica.push('imie4', 'imie5'); //doda do tabelki imie4 i imie5
+
+			document.write(dlugosc + '- dlugosc po POP'); //wypisze sie 5
+			document.write(tablica + '- tablica po POP'); //wypisze sie 'imie1,imie2,imie,3,imie4,imie5'
+
+			//usuwanie ostatniego elementu z tablicy
+			Tablica = new Array('imie1', 'imie2', 'imie3');
+			var element = Tablica.pop();
+
+			document.write(element + '<br>'); //wypisze sie imie3
+			document.write(tablica + '<br>'); //wypisze sie imie1 i imie2
+
+			//dodawanie pierwszego elementu do tablicy
+			Tablica = new Array('imie1', 'imie2', 'imie3');
+			var dlugosc = Tablica.unshift('imie-1', 'imie0');
+			
+			document.write(dlugosc + '<br>'); //wypisze 5
+			document.write(Tablica + '<br>'); //wypisze sie 'imie-1, imie0, imie1, imie2, imie3'
+
+			//Usuwanie pierwszego elementu z tablicy
+			Tablica = new Array('imie1', 'imie2', 'imie3');
+        	var element = Tablica.shift();
+
+        	//usuwanie dowolnych elementow
+        	let usuniete = Tablica.splice(1, 1); //usuwa od indeksu, ilosc elementow
+
+        	document.write(element); //wypisze się imie1
+        	document.write(Tablica.join() + '<br>'); //wypisze się "imie2,imie3"
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf8">
+		<title>JavaScript 12</title>
+		<script>
+	function zmien_opcje(nr) {	
+		const naszaLista = document.getElementById('lista1');
+		const kolekcjaElementowLI = naszaLista.getElementsByTagName('a');
+
+		for (let i = 0; i < kolekcjaElementowLI.length; i++)		{
+			if (i == nr)	{
+				kolekcjaElementowLI[i].setAttribute("style", "text-transform: uppercase; color: red; font-weight: bold;");
+			} else {
+				kolekcjaElementowLI[i].setAttribute("style", "text-transform: none;");
+			}
+		}
+	}
+		</script>
+	</head>
+	<body>
+		<div id="menu">
+			<ol id="lista1">
+				<li><a href="#" onclick="zmien_opcje(0);">Tygrys</a></li>
+				<li><a href="#" onclick="zmien_opcje(1);">Krowa</a></li>
+				<li><a href="#" onclick="zmien_opcje(2);">Chomik</a></li>
+				<li><a href="#" onclick="zmien_opcje(3);">Sowa</a></li>
+			</ol>
+		</div>
+	</body>
+</html>

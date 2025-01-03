@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf8">
+		<title>JavaScript 05 FOR - działania</title>
+		<style>
+			body{
+				background-color: black;
+				padding: 1em;
+				color: orange;
+				font-size: 2em;
+			}
+			button{
+				padding: 1em;
+				background-color: orange;
+			}
+			button:hover{
+				background-color: darkgray;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h1 class="p1">Witaj na stronie JS</h1>
+		<script>
+			function nazwafunkcji(){
+				let los = '';
+				for(i = 0; i < 10; i++){
+					los += Math.floor(Math.random() * 256) + ', ';
+				}
+				alert(los);
+			}
+
+			function nazwafunkcji2(ile) {
+				let los = '';
+				for(i = 0; i < ile; i++){
+					los += Math.floor(Math.random() * 256) + ', ';
+				}
+				alert(los);
+			}
+		</script>
+		Wcisnij aby wylosowac liczby:<br>
+		<button onclick="nazwafunkcji();">Losuj</button>
+		<button onclick="nazwafunkcji2(10)">Losuj10</button>
+		<button onclick="nazwafunkcji2(5)">Losuj5</button>
+		<button onclick="nazwafunkcji2(1)">Losuj1</button>
+		<button onclick="nazwafunkcji2(prompt('podaj ilosc liczb?', 45));">Podaj ile?</button>
+	</body>
+</html>

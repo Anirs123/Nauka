@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf-8">
+		<title>STRONA JS</title>
+	</head>
+	<body>
+
+		<script>
+		//alert("JavaScript działa!!!");
+			let tekst = "Ala ma kota Łukszę, a Ola ma psa Jaźń";
+			document.write(tekst);
+			
+			document.write('<h1>Length - długość tekstu</h1>');
+			let dlugosc = tekst.length;
+			
+			document.write('<h1>charAt - znak na pozycji</h1>');
+			document.write('trzecia litera - ' + tekst.charAt(2) + '<br>'); //wypisze się "a" bo stringi indeksowane są od 0, lub tablicowo tekst[2]
+			document.write('ostatnia litera - ' + tekst.charAt(dlugosc - 1) + '<br>'); //wypisze się ostatnia litera tekstu czyli "a"
+			
+			document.write('<h1>charCodeAt - kod ASCII znaku</h1>');
+			document.write('kod ASCII pierwszej litery - ' + tekst.charCodeAt(0) + '<br>'); //wypisze się 65 (A)
+			document.write('kod ASCII piątej litery - ' + tekst.charCodeAt(12) + '<br>'); //wypisze się 321 (Ł)
+			
+			document.write('<h1>toUpperCase, toLowerCase - zmiana wielkości liter </h1>');
+			document.write(tekst.toUpperCase() + '<br>'); //wypisze sie ALA MA KOTA
+			document.write(tekst[0].toUpperCase() + '<br>'); //wypisze sie Ala ma kota
+			document.write(tekst.toLowerCase() + '<br>'); //wypisze sie ala ma kota
+			
+			
+			document.write('<h1>Znaki od .. do</h1>');	//substring(start, stop)
+			document.write('znaki od 3 do 7 - ' + tekst.substring(2,6) + '<br>');  //wypisze sie ma
+			document.write('znaki od 4 do konca - ' + tekst.substring(3) + '<br>'); //wypisze sie ma kota
+			
+			let str = "1234567890";
+  			document.write('1234567890 - substring(2, 6)' + str.substring(2, 6));	//3456
+
+			document.write('<h1>Znaki od, ilość</h1>');	//substr(start, dlugosc) 
+			document.write('od 2 znaku 4 znaki - ' + tekst.substr(1,4) + '<br>'); //wypisze sie 'la m' 
+			document.write('od 5 znaku 8 kolejnych - ' + tekst.substr(4,8)); //wypisze sie ma kota
+			
+  			document.write('1234567890 - substr(2,4)' + str.substr(2, 4));	//3456
+
+			document.write('<h1>Pozycja szukanego tekstu</h1>'); 
+			document.write('Pozycja ciągu kot: ' + tekst.indexOf('kot', 0) + '<br>'); //wypisze sie liczba oznaczająca pozycję ciągu kot
+			document.write('Ostatnie wystąpienie słowa ma - ' + tekst.lastIndexOf('ma') + '<br>'); 
+	
+			document.write('<h1>podmiana fragmentu tekstu</h1>');
+			let zamieniony = tekst.replace("Ala","Ola");
+			let zamieniony2 = tekst.replaceAll("a","@");
+			document.write('Zmieniony tekst: ' + zamieniony + "<br>");
+			document.write('Zmieniony tekst: ' + zamieniony2 + "<br>");
+
+			document.write('<h1>zmiana tekstu na tablicę</h1>');
+			let tablica = tekst.split(' ');
+			tablica.forEach(function(slowo){
+				document.write(slowo + '<br>')
+			})
+			
+			document.write('<h1>zmiana tablicy na tekst</h1>');
+			let nowy = tablica.join();
+			document.write(nowy + '<br>')
+			let nowy2 = tablica.join('-');
+			document.write(nowy2 + '<br>')
+
+			document.write('<h1>escapowanie - "kodowanie" tekstów</h1>');
+			document.write('Przed: ' + tekst + '<br>');
+			document.write('Po: ' + escape(tekst) + '<br>');
+			
+			tekst = escape(tekst);
+			document.write('Przed: ' + tekst + '<br>');
+			tekst = unescape(tekst);
+			document.write('Po: ' + tekst + '<br>');
+		</script>
+		<style>
+
+		</style>
+	</body>
+</html>

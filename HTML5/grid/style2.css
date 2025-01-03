@@ -1,0 +1,96 @@
+.container > div{
+    background-color: teal;
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+}
+.container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* tyle ile auto tyle kolumn */
+}
+.container .box1{
+    grid-column: 1/3;
+}
+.container2 > div{
+    background-color: teal;
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+}
+.container2{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* tyle ile auto tyle kolumn */
+}
+.container2 .box8{
+    grid-column: 2/4;
+}
+.container3 > div{
+    background-color: teal;
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+}
+.container3{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.container3 .box4{
+    grid-column: 1/3;
+}
+.container3 .box7{
+    grid-column: 2/4;
+}
+.container4 > div{
+    background-color: teal;
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+}
+.container4{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.container4 .box1{
+    grid-row: 1/3;
+}
+.container5 > div{
+    background-color: teal;
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+}
+.container5{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.container5 .box4{
+    grid-column: 1/3;
+}
+.container5 .box7{
+    grid-column: 2/4;
+    grid-row: 3/5;
+}
+.container6 > div{
+    background-color: teal;
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+}
+.container6{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.container6 .box1{
+    grid-column: 1/3;
+}
+.container6 .box5{
+    grid-column: 1/3;
+}
+.container6 .box4{
+    grid-column: 2/4;
+}
+.container,.container2,.container3,.container4,.container5,.container6{
+    border: 7px solid orange;
+}

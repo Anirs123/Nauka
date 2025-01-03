@@ -1,0 +1,33 @@
+
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf8">
+		<title>JavaScript 03 - działania</title>
+		<script>
+			const l1 = parseFloat(prompt('Podaj liczbę nr 1')); //parseFloat chcemy miec liczbe ulamkowa czyli po kropce
+			const l2 = parseFloat(prompt('Podaj liczbe nr 2'));
+			const znak = prompt("znak dzialania (+ - * / %)");
+
+			switch(znak){ //switch sklada sie z case'ow czyli spraw
+				case '+':
+					alert(l1 + l2);
+				break; //zakonczenie case'a
+				case '/':
+					if(l2 != 0) //musi byc rozne od 0 (!= różne od)
+						alert(l1 / l2);
+					else //jezeli podzieli przez 0 (czyli jezeli bedzie falsz)
+						alert('Nie dziel debilu przez 0');
+						document.write(`<h1> nie dziel przez 0 </h1>`);
+				break;
+				default: //default dziala jezeli wpiszemy bledny znak lub zadnego
+					alert('Zly znak dzialania');
+					document.write(`<h1> Wpisales zly znak dzialania </h1>`);
+			}
+			
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

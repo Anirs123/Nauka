@@ -1,0 +1,70 @@
+img{
+	width: 100px;
+	height: 100px;
+	position: relative;
+	animation: pilka 0.5s ease-in-out infinite;
+}
+@keyframes pilka{
+
+	25%{top: 100px;}
+	50%{left: 100px;}
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	display: flex;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+}
+.box{
+	display: flex;
+	column-gap: 10px;
+}
+.box .kropka{
+	width: 35px;
+	text-align: center;
+	/* background-color: aqua; */
+	border: 1px solid aqua;
+	height: 35px;
+	font-size: 30px;
+	font-weight: bold;
+	font-family: arial;
+	border-radius: 50%;
+	/* -webkit-box-shadow: 13px 8px 15px 0px rgba(150, 155, 222, 1); */
+	/* -moz-box-shadow: 13px 8px 15px 0px rgba(150, 155, 222, 1); */
+	/* box-shadow: 13px 8px 15px 0px rgba(150, 155, 222, 1); */
+	animation: ruch 1s ease-in-out infinite alternate;
+}
+.kropka:nth-child(1){
+	animation-delay: -0.25s;
+	background-color: rgba(0, 255, 255, 0.103);
+}
+.kropka:nth-child(2){
+	animation-delay: -0.5s;
+	background-color: rgba(102, 255, 0, 0.103);
+	/* background-color: gray; */
+}
+.kropka:nth-child(3){
+	animation-delay: -0.75s;
+	background-color: rgba(255, 0, 0, 0.103);
+	/* background-color: green; */
+}
+.kropka:nth-child(4){
+	animation-delay: -1s;
+	background-color: rgba(132, 0, 255, 0.103);
+	/* background-color: teal; */
+}
+.kropka:nth-child(5){
+	animation-delay: -1.25s;
+	background-color: rgba(255, 0, 170, 0.103);
+	/* background-color: aqua; */
+}
+@keyframes ruch{
+	0%{transform: translateY(10px);}
+	25%{transform: translateY(10px);}
+	75%{transform: translateX(-10px);}
+	100%{transform: translateX(10px);}
+}

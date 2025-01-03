@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf8">
+		<title>JavaScript 05 FOR - działania</title>
+		<style>
+			table {
+				width: 10%;
+				margin: 2em auto;
+				border-collapse: collapse;
+				border: 1px solid rgb(0, 0, 0);
+			}
+			td, th {
+				border: 1px solid rgb(0, 0, 0);
+				text-align: center;
+				padding: 0.5em;
+			}
+		</style>
+
+	</head>
+	<body>
+			<script>
+			/* let r = 0 + Math.floor(Math.random() * (255 + 1));
+			let g = 0 + Math.floor(Math.random() * (255 + 1));
+			let b = 0 + Math.floor(Math.random() * (255 + 1));
+			const iloscw = prompt("PODAJ ILOSC WIERSZY", "2");
+			const ilosck = prompt("PODAJ ILOSC KOLUMN", "2");
+			let c = (500 - 100 + 1);
+			document.write("<table>");
+			for(w = 0; w < iloscw; w++) {
+				let liczby = 100 + Math.floor(Math.random() * (c)); //generujemy 100 liczb od 100 do 500
+				document.write("<tr>")
+			for(k = 0; k < ilosck; k++){
+				document.write(`<td style="background-color:${r}, ${g}, ${b};"> ${liczby} </td>`)
+				document.write("</tr>")
+			}
+			}
+			document.write("</table>"); */
+			const ileW = prompt('Podaj ilość wierszy', 13);
+			const ileK = prompt('Podaj ilość kolumn', 19);
+			if(ileW < 50 && ileK < 20) {
+				document.write('<table>');
+				for(w = 0; w < ileW; w++) {
+					document.write('<tr>');
+					for(k = 0; k < ileK; k++) {
+						const los = Math.floor(Math.random() * 256);
+						const r = Math.floor(Math.random() * 256);
+						const g = Math.floor(Math.random() * 256);
+						const b = Math.floor(Math.random() * 256);
+						//document.write('<td style="background-color: rgb('+r+','+g+','+b+');">' + los + '</td>');
+						document.write(`<td style="background-color: rgb(${r},${g},${b});">${los}</td>`); //rgb(200,45,255)
+					}
+					document.write('</tr>');
+				}
+				document.write('</table>');
+			} else {
+				document.write('<p style="color: red">Za duża tabela. Proszę podać wartości wierszy < 50 i kolumny < 20</p>');
+			}
+		</script>
+	</body>
+</html>

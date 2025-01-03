@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf-8">
+		<title>JavaScript 12</title>
+	</head>
+	<body>
+		<div>
+			<form>
+				<fieldset>
+					<legend>OPERATORZY</legend>
+						<label for="tekst">Imię:</label><br>
+						<input type="text" id="tekst" name="tekst" placeholder="Janusz" autofocus maxlength="20"><br><br>
+						<label for="opera">Operator:</label><br>
+						<select name="opera" id="opera">
+							<option value="">Proszę wybrać</option>
+							<option value="T-Mobile">T-Mobile</option>
+							<option value="PLUS">PLUS</option>
+							<option value="Play">Play</option>
+							<option value="Orange">Orange</option>
+							<option value="njuMobile">njuMobile</option>
+							<option value="Heyah">Heyah</option>
+							<option value="Inna">Inna</option>
+						</select><br><br>
+						<label for="number">Od ilu lat posiadasz telefon:</label><br>
+						<input type="number" id="number" name="number"><br><br>
+						<label for="radio" name="radio">Czy jesteś zadowolony/a:</label><br>
+						<input class="or" type="radio" id="radio" value="Nie" name="radio">Nie<br>
+						<input class="or" type="radio" id="radio" value="Tak" name="radio">Tak<br>
+						<input class="or" type="radio" id="radio" value="Nie mam zdania" name="radio">Nie mam zdania<br><br>
+						<label for="checkbox">Co jest ważne dla Ciebie:</label><br>
+						<input class="or" type="checkbox" id="check" name="check" value="Nielimitowane rozmowy">Nielimitowane rozmowy<br>
+						<input class="or" type="checkbox" id="check" name="check" value="Nielimitowane SMS'y">Nielimitowane SMS'y<br>
+						<input class="or" type="checkbox" id="check" name="check" value="Nielimitowany Internet">Nielimitowany Internet<br><br>
+						<label for="textarea">Opinia:</label><br>
+						<textarea placeholder="Napisz kilka zdań opinii" id="textarea" name="textarea"></textarea><br><br>
+						<input id="btn" type="submit" value="Zapisz">
+				</fieldset>
+			</form>
+			<form>
+				<fieldset>
+					<legend>Podsumowanie</legend>
+					<p id="Wyniki"></p>
+				</fieldset>
+			</form>
+		</div>
+		<script>
+			let form = document.querySelector("form");
+			form.addEventListener('submit', event => {
+				let imie = tekst.value;
+				let operator = opera.value;
+				let telefon = number.value;
+				let happy = document.querySelector("[name=radio]:checked").value;
+				let important = document.querySelectorAll("[name=check]:checked").value; //DOKONCZYC W DOMU
+				let opinia = textarea.value;
+				console.log(imie + ", " + operator + ", " + telefon + ", " + happy + ", " + important);
+				event.preventDefault();
+				document.getElementById("Wyniki").innerText = "XXX";
+			});
+		</script>
+		<style>
+			textarea{
+				width: 300px;
+				height: 100px;
+			}
+			form{
+				width: 350px;
+			}
+			body{
+				background-color: black;
+				color: orange;
+			}
+			label{
+				color: yellow;
+			}
+			.or{
+				color: orange;
+			}
+		</style>
+	</body>
+</html>

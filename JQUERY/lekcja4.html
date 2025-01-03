@@ -1,0 +1,57 @@
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script>
+            $(function(){
+                $('.pokaz').click(function(){
+                //    alert('klik')
+                    if($(this).text() == "Pokaz")
+                        $(this).text('Ukryj');
+                    else
+                        $(this).text('Pokaz');
+                    $(this).prev().fadeToggle('slow');
+                    
+                }) //koniec nasluchiwania klikniecia
+            }); //koniec jquery
+        </script>
+        <style>
+            div{
+                width: 80%;
+                height: 30%;
+                border: 5px solid pink;
+            }
+            .tresc{
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="news">
+            <h1>skrzyzowanie dróg miejskich kliknij aby zobaczyc XD</h1>
+            <span class="tresc">
+                sdawadawdawdawdadwwwwwwwwwwwwwwwwawddddddddddddddddddddddddddddddddddddddddfawfawfafwee<br>
+                dwaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawdaadawfawfawfwafafwaffawfafafawfawwsf<br>
+                dwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwawsf<br>
+                dwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwa<br>
+                dwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwa<br>
+                fwaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawdadasdawfagwagagaegaegaefaefafaefaefaesdadawdads<br>
+            </span>
+            <p class="pokaz">Pokaz</p>
+        </div>
+        <div class="news">
+            <h1>skrzyzowanie dróg miejskich kliknij aby zobaczyc XD</h1>
+            <span class="tresc">
+                sdawadawdawdawdadwwwwwwwwwwwwwwwwawddddddddddddddddddddddddddddddddddddddddfawfawfafwee<br>
+                dwaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawdaadawfawfawfwafafwaffawfafafawfawwsf<br>
+                dwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwawsf<br>
+                dwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwa<br>
+                dwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwadwa<br>
+                fwaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawdadasdawfagwagagaegaegaefaefafaefaefaesdadawdads<br>
+            </span>
+            <p class="pokaz">Pokaz</p>
+        </div>
+        <h1 class="powitanie"></h1>
+
+    </body>
+</html>

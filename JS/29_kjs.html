@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <title>Strona Javascript</title>
+        <script>
+            //zad 1
+            z = 1; // zmienna globalna
+                function a()
+            {
+                var z = 2; //var nadpisuje jezeli jest w bloku
+            }
+            a();
+            alert(z) 
+            //zad 2
+                z = Array();
+                z.push("ABC"); //0
+                z.push("D"); //1
+                z.push("E"); //2
+                alert(z[1]) //wyswietla wynik = 1 z czyli D
+            //zad 3
+                alert(3>=4); //false
+            //zad 4
+                z = "ABC";
+                alert(z.indexOf("D")) //D = -1 poniewaz A to 0 B to 1 C to 2 a D -1
+            //zad 5
+                const fruits = ["Banana", "Orange", "Apple", "Mango"];
+                let index = fruits.indexOf("Apple");// wynik to 2
+                alert(index);
+            //zad 6
+                s = 0
+                for(i = 2; i <= 10; i = i + 2){
+                s = s + i;
+                } //wynik to 30
+                alert(s);
+            //zad 7
+                z = Array();
+                z.push("A");
+                z.push("B");
+                z.push("C");
+                alert(z[1]); //wynik to B
+            //zad 8
+                z = "ABC";
+                alert(z[1])//wynik to B
+            //zad 9
+            s = 0
+                for(i = 1; i < 5; i = i + 1){
+                s = s * i;
+            }
+            alert(s)
+            //zad 10
+            z = 1;
+            function a()
+            {
+              z = 2;
+            }
+            a();
+            alert(z)
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

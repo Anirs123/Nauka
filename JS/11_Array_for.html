@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf8">
+		<title>JavaScript 05 FOR - działania</title>
+		<style>
+
+		</style>
+
+	</head>
+	<body>
+		<script>
+			document.write('<h1>Zwykła tablica</h1>');
+			const tab = ["Marcin", "Ania", "Agnieszka", "Alojzy"];
+			document.write('<br><b>Zwykla pętla for:</b>');
+			const dl = tab.length;
+			for(i = 0; i < dl; i++){
+				document.write(tab[i] + ', ')
+			}
+			document.write('<br>');
+			document.write('<br><b>Petla for in:</b>');
+			for (const el in tab) { //el jest indeksem
+			    document.write(tab[el] + ', '); //"Marcin", "Ania"...
+			}
+			document.write('<br><b>Pętla for of:</b> ');
+			for (const x of tab) { //x jest wartoscią
+			    document.write(x + ', '); //"MARCIN"...
+			}
+			document.write('<br><b>Pętla forEach:</b> ');
+			tab.forEach(function(el){
+				document.write(el + ', ');
+			})
+			document.write('<br><b>forEach - funkcja strzałkowa: </b>');
+			tab.forEach(el => {
+				document.write(el + ',  ');
+			});
+
+			document.write('<h1>Tablica asocjacyjna</h1>');
+			let animals = new Array();
+			animals['chomik'] = "radioaktywny";
+			animals['kot'] = "zmutowany";
+			animals['pies'] = "Super Samson";
+
+			document.write('<br><b>Pętla for in:</b><br> ');
+			for (const index in animals) { //nazwy elementow tablicy
+			    document.write('[' + index + '] => ' + animals[index] + '<br>'); 
+			}
+			document.write('<br>');
+
+		</script>
+	</body>
+</html>

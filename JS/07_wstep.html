@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf8">
+		<title>JavaScript 05 FOR - działania</title>
+		<style>
+			table {
+				width: 80%;
+				margin: 2em auto;
+				border-collapse: collapse;
+				border: 1px solid rgb(0, 0, 0);
+			}
+			td, th {
+				border: 1px solid rgb(0, 0, 0);
+				text-align: center;
+				padding: 0.5em;
+			}
+		</style>
+
+	</head>
+	<body>
+		<table>
+			<thead>
+			<tr>
+				<th>/2</th>
+				<th>/3</th>
+				<th>/5</th>
+			</tr>
+		</thead>
+			<tr>
+				<td id="p2"></td> <!--TUTAJ MAMY ELEMENT Z ID-->
+				<td id="p3"></td>
+				<td id="p5"></td>
+			</tr>
+		</table>
+			<script>
+			let p2=p3=p5=""; //dajemy pod identyfikatory (puste pola)
+			let c = (500 - 100 + 1);
+			for(i = 0; i < 100; i++) {
+				let liczby = 100 + Math.floor(Math.random() * (c)); //generujemy 100 liczb od 100 do 500
+				if (liczby % 2 == 0)
+					p2 += liczby + ', '; //DAJEMY DO P2 LICZBY wygenerowane i wpisywane sa po przecinku
+				if(liczby % 3 == 0)
+					p3 += liczby + ', ';
+				if(liczby % 5 == 0)
+					p5 += liczby + ', ';
+			}
+				document.getElementById('p2').innerHTML = p2; //innerHTML dodaje do htmla ,getelementbyid wyszukuje danego id i dodaje do niego
+				document.getElementById('p3').innerHTML = p3;
+				document.getElementById('p5').innerHTML = p5;
+		</script>
+	</body>
+</html>

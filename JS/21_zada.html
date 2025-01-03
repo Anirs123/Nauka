@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf8">
+		<title>JavaScript 12</title>
+	</head>
+	<body>
+		<h1>JAVASCRIPT</h1>
+		<div>
+			<form>
+				<label for="tekst">Tekst</label>
+				<input type="text" id="tekst" name="tekst" autofocus maxlength="20">
+				<label for="kolor">Kolor</label>
+				<input type="text" id="kolor" name="kolor" maxlength="10">
+				<button type="submit">Odbierz</button>
+				<h1 id="toTu"></h1>
+			</form>
+		</div>
+		<p id="gen" onClick="generuj();">GENERUJ</p>
+		<script>
+			function generuj() {
+				const g = document.getElementById("gen");
+				let liczba = Math.floor(Math.random() * 256);
+				g.innerHTML = liczba;
+			}
+			const btn = document.querySelector('button');
+			btn.addEventListener('click', () => {
+				//let kol = document.getElementById("tekst").value;
+				let tek = tekst.value;
+				let kol = kolor.value;
+				if(kol == ''){
+					kol = "red"
+				}
+				if(tek == ''){
+					tek = 'ZS nr 2'
+				}
+				document.getElementById('toTu').innerText = tek;
+				document.getElementById('toTu').style.color = kol;
+				
+				prevent.default()
+			})
+		</script>
+	</body>
+</html>

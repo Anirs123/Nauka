@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf8">
+		<title>JavaScript 05 FOR - działania</title>
+		<style>
+			body{
+				background-color: white;
+			}
+			.p1{
+				color: black;
+			}
+			#h{
+				color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="p1" id="h">Witaj na stronie JS</h1>
+		<p class="p1">Jakiś tekst w akapicie pierwszym</p>
+		<p class="p1">Jakiś tekst w akapicie drugim</p>
+		<p class="p1">Jakiś tekst w akapicie trzecim</p>
+		<p class="p1">Jakiś tekst w akapicie pierwszym</p>
+		<script>
+			const kolor = prompt("podaj kolor tekstu","red");
+			const tlo = prompt("podaj kolor tla","blue");
+			document.body.style.BackgroundColor = tlo; //document. <-- oznacza strone wyświetlaną a body i style to drzewo do ktorego wchodzimy
+			document.getElementById('h').style.color = kolor;
+			//po petlach i tablicach
+			//const pTab = document.getElementsByTagName('p');
+			const pTab = document.getElementsByClassName('p1');
+			for(i = 0; i < pTab.length; i++)
+				pTab[i].style.color = kolor;
+			//to samo inaczej
+			for(const elP of pTab) {
+				elP.style.color = kolor;
+			}
+		</script>
+</html>

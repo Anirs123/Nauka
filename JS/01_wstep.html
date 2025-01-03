@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <title>Strona Javascript</title>
+        <script>
+            //komentarz jedno linijkowy :D
+            //wyskakujący alert w oknie
+            alert("Script działa");
+            console.log(9 + 5 + 1);
+            document.write('<h2 style="color: red; font-size: 20px;">Javascript wita</h2>');
+
+            //let to dodanie do szufladki
+            let rok = 2021 + 4;
+            document.write('mamy obecnie' + rok + ' rok<br>');
+            document.write(`mamy obecnie ${rok} rok<br>`);
+
+            //jezeli robimy rok ponizej to ten nizesz zawsze jest priorytetowy
+            rok = 2015;
+            document.write("mamy " + rok + "rok <br>");
+            
+            //var to jest dodanie do szufladki jak let tylko gorsze
+            var cena2 = 18.50;
+            document.write("hej " + cena2 + "cena <br>");
+
+            let a = 2.15;
+            let b = '30';
+            let c = -3;
+            //alert(zmiennaNieIstnieje);
+            let nic = undefined; //zmienna o nazwie nic
+            alert(nic + 2); //NaN not a number
+            alert(typeof(nic)); //undefined
+
+            let obl = a + b;
+            document.write(obl + '<br>');
+
+            let ng = 2;
+            let t1 = "Ala";
+            let t2 = "Ola";
+            let t3 = "Ewa";
+            let kolor = "red";
+            
+            document.write("<h" + ng + " style='color: " + kolor + "'>" + t1 + "</h" + ng + ">");
+            document.write("<h" + ng + ">" + t2 + "</h" + ng + ">");
+            document.write("<h" + ng + ">" + t3 + "</h" + ng + ">");
+
+            let x, y, i = 0;
+            document.write('x = ' + x + '<br>');
+
+            let r = 13;
+            const PI = 3.14;
+            var zm = 2;
+            //PI = 'liczba pi'; //powstanie błąd
+            alert(PI);
+        </script>
+    </head>
+    <body>
+        <h1>Javascript 01 - składania</h1>
+    </body>
+</html>

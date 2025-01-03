@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script>
+            //$(document).ready(function(){
+            $(function(){ //druga opcja
+                // alert('jquery dziala');
+                $('h1').click(function(){ //nasluchiwanie klikniecia
+                    // alert('dziala');
+                    $(this).css('color', 'red');
+                    $('p').css('color', 'yellow');
+                }) //koniec nasluchiwania klikniecia
+            }); //koniec jquery
+        </script>
+    </head>
+    <body>
+        <h1>Tytył 1</h1>
+        <h1>Tytył 2</h1>
+        <p>Jakas tresc akapitu</p>
+        <script>
+            // const h1 = document.querySelectorAll('h1');
+            // const p = document.querySelector('p');
+            // h1.forEach(el => el.addEventListener('click', function(){ //for each - dla kazdeho h1 a el to elemeny (zmienna)
+            //     this.style.color = "red"; //this to jest ten klikniety element
+            //     p.style.color = "yellow";
+            // }))
+        </script>
+    </body>
+</html>

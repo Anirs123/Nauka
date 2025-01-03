@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins";
+        }
+        section{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        section .box{
+            position: absolute;
+            transition: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        section .box.box2{
+            background-color: #376b02;
+            clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+        }
+        section .box h2{
+            color: #376b02;
+            font-size: 6vw;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            animation: ruch 5s ease-in-out infinite;
+        }
+        section .box.box2 h2{
+            color: #fff;
+        }
+        section .box h2 span:nth-child(2){
+            line-height: 1em;
+            font-size: 2em;
+
+        }
+        @keyframes ruch{
+            0%, 45%{
+                transform: translateY(-70%);
+            }
+            55%, 90%{
+                transform: translateY(70%);
+            }
+            100%{
+                transform: translateY(-70%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="box box1">
+            <h2>
+                <span>Żegnamy</span>
+                <span>2023</span>
+            </h2>
+        </div>
+
+        <div class="box box2">
+            <h2>
+                <span>Witamy</span>
+                <span>2024</span>
+            </h2>
+        </div>
+    </section>
+</body>
+</html>

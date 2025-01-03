@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf8">
+		<title>JavaScript 05 FOR - działania</title>
+		<style>
+			body{
+				margin: 0px;
+				padding: 0px;
+			}
+			fieldset{
+				border-color: 1px solid black;
+				width: 500px; 
+				height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<fieldset>
+			<legend>Liczby</legend>
+				<div>
+					<label for="ilosc">Ilość</label> 
+					<input type="text" id="ilosc" autofocus value="20" onkeydown="return check(event.key)">
+					<button onclick="losuj();">Losuj</button>
+				</div>
+		</fieldset>
+		<fieldset>
+			<legend>Konsola</legend>
+			<div id="konsola"></div>
+			<button onclick="czyszc();">Czyść</button>
+		</fieldset>	
+	<script>
+	function losuj() {
+		const ile = ilosc.value
+		let liczby = ''
+		if(ile > 0 && ile != '') {
+			for(i = 0; i < ile; i++) {
+				los = Math.floor(Math.random() * 1000);
+				liczby += los + ', ';
+			}
+			const txt = document.createTextNode(liczby);
+			document.getElementById('konsola').appendChild(txt); //appendChild powoduje dodanie do HTMLa , InnerHTML moze cos podmieniać co juz istnieje
+			const br = document.createElement("br");
+			document.getElementById('konsola').appendChild(br);
+			ilosc.value = "";
+			document.getElementById('ilosc').focus();
+		}
+		else {
+			const txt = document.createTextNode("Błędne dane");
+			document.getElementById('konsola').appendChild(txt); //appendChild powoduje dodanie do HTMLa , InnerHTML moze cos podmieniać co juz istnieje
+			const br = document.createElement("br");
+			document.getElementById('konsola').appendChild(br);
+			ilosc.value = "";
+			document.getElementById('ilosc').focus();
+		}
+			function czyszc(){
+			document.getElementById('konsola').innerHTML = ''; //innerTEXT mozna wykorzystac do np loginow innerText nie interpretuje znacznikow tylko sam tekst
+			document.getElementById('ilosc').focus();
+		}
+	}
+		function check(key) {
+			return (key >= '0' && key <= '9') || key == 'ArrowLeft' || key == 'ArrowRight' || key == "Delete" || key == "Backspace";
+		}
+		function losuj() {
+
+		}
+	</script>
+	</body>
+</html>

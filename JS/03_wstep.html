@@ -1,0 +1,45 @@
+
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf8">
+		<title>JavaScript 03 - działania</title>
+		<script>
+			let min = -10;
+			let max = 10;
+
+			//let los = Math.floor(Math.random() * 11);
+			let los = min + Math.floor(Math.random() * (max - min + 1));
+
+			alert(los);
+
+			let ng = 2;
+			let kolor = 'black';
+			const odp = prompt('Czy w kolorze chcesz teks? (t/n)', 't/n');
+			if(odp == 't'){
+				ng = 1;
+				kolor = 'red';
+			}
+			else if(odp == 'tak'){
+				ng = 1;
+				kolor = 'green';
+			}
+			document.write(`<h${ng} style="color: ` + kolor + `;"> ZS NR2 </h ${ng}>`);
+
+			const liczba = prompt('Podaj liczbę a (7)');
+			const liczbaB = prompt('Podaj liczbę b (5)');
+			if(liczba == (liczba > liczbaB));
+			else if(liczba >= liczbaB){
+				licz = liczba + ' > ' + liczbaB;
+			}
+			if(liczba == (liczba < liczbaB));
+			else if(liczba <= liczbaB){
+				licz = liczba + ' < ' + liczbaB;
+			}
+			document.write(`<h1> ${licz} </h1>`);
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

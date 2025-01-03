@@ -1,0 +1,28 @@
+.box1{
+    background-color: #aaa;
+    border: 1px solid red;
+    padding: 10px;
+    text-align: center;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+.container1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    /* trzy tej samej wielkosci */
+}
+.container2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr 2fr);
+}
+.container3{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr 4fr);
+}
+.container4{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+}

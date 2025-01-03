@@ -1,0 +1,1039 @@
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <style>
+		body {
+			font-family: courier;
+		}
+        table {
+				width: 80%;
+				margin: 2em auto;
+				border-collapse: collapse;
+				border: 1px solid black;
+		}
+		td, th {
+				border: 1px solid black;
+				text-align: center;
+				padding: 0.5em;
+		}
+    </style>
+    <body>
+        <table>
+			<thead>
+				<tr>
+					<th>/2</th>
+					<th>/3</th>
+					<th>/5</th>
+				</tr>	
+			</thead>
+			<tbody>
+				<tr>
+					<td id="p2"></td>
+					<td id="p3"></td>
+					<td id="p5"></td>
+				</tr>
+		</table>
+    </body>
+    <script>
+        //skladnie
+        let a = 2
+        let b = 3
+        let c = a + b;
+        console.log(c);
+        let ww = "siemka";
+        let d = a + ww;
+        console.log(d);
+        //operatory
+        let e = a - b
+        console.log(e);
+            // -, +, /, *, %, ++, --
+            // == -> sprawdzasz jest rowne
+            // = -> jest na 100% a = 3
+            // != -> nie jest rowne (rozne)
+            // === -> identyczne
+        let f = 7 % 2 //1
+        console.log(f);
+        //pre i post inkrementacja
+        a = b++ // ++ po zmiennej to robi to po zaladowaniu lub po jednej petli
+        console.log(a)
+        a = 2
+        b = 3
+        obliczanie = a++ - ++b + --a + b--;
+        console.log(obliczanie);
+        //losowa liczba od 200 do 100
+        max = 200
+        min = 100
+        let losowanie = Math.floor(Math.random() * (max - min + 1));
+        //prompty
+            // let cenakupy = prompt("podaj cene kupy");
+            // let cenakupy1 = parseFloat(prompt("podaj cene kupy")); // zmienia na liczbe
+            // let cenakupy2 = parseInt(prompt("podaj cene kupy")); // usuwa po przecinku
+            // console.log(cenakupy)
+            // console.log(cenakupy1)
+            // console.log(cenakupy2)
+        //if
+        a = "red";
+        b = "blue";
+        if(a == "red"){
+            document.write(`<h1 style="color: ${b};">TEKST</h1>`)
+        }
+        
+        if(a == "blue"){
+            document.write(`<h1 style="color: ${b};">TEKST</h1>`)
+        }
+        else{
+            document.write(`NIE JEST NIEBIESKI<br>`)
+        }
+        //cwicz wiek
+        // > -> większe
+        // < -> mniejsze
+        let wiek = parseInt//(prompt("podaj wiek:"));
+        if(wiek > 18){
+            alert("jestes dorosly")
+        }
+        else{
+            alert("nie jestes dorosly")
+        }
+        //switch calculator
+        let pierwsze = parseInt(prompt("PODAJ PIERWSZA LICZBE"))
+        let drugie = parseInt(prompt("PODAJ DRUGA LICZBE"))
+        let znaczek = prompt("PODAJ ZNAK DZIALANIA")
+        switch(znaczek){
+            case '*':
+                document.write(pierwsze * drugie);
+            break;
+            case '-':
+                document.write(pierwsze - drugie);
+            break;
+            case '+':
+                document.write(pierwsze + drugie);
+            break;
+            case '/':
+                if(drugie == 0){
+                    document.write("NIE DZIEL PRZEZ ZERO")
+                }else{
+                document.write(pierwsze / drugie);
+                }
+            break;
+            case '%':
+                document.write(pierwsze % drugie);
+            break;
+            default:
+                document.write("ZŁY ZNAK DZIAŁANIA<br>");
+        }
+        //kolorowanie parzystej i nieparzystej
+        let los = Math.floor(Math.random() * 256);
+			if(los % 2){
+				kol = 'green';
+            }
+			else{
+				kol = 'red';
+            }
+        //petle for
+        let i = 0;
+        for(i = 0; i < 5; i++){
+            let losowykolor = Math.floor(Math.random() * 256); //0 -255
+            document.write(`<h1 style="color: rgb(${losowykolor}, ${losowykolor}, ${losowykolor});">siemka<h1><br>`)
+            console.log(i)
+        }
+        //petla w petli
+        let str = '<br>';
+			for (let w = 0; w < 10; w++) {
+			    for (let k = 0; k < 15; k++) {
+			        	str += '*';
+			    }
+			    str += "<br>";
+			}
+			document.write(str);
+            str = '<br>'; //deklaracja let powyzej
+			const ile = parseInt(prompt('Podaj ilosc','15'));
+			const znak = prompt('Podaj znak','@');
+			for (let i = 0; i < ile; i++) {
+			    for (let j = 0; j < ile; j++) {
+			        str += znak;
+			    }
+			    str += "<br>";
+			}
+			document.write(str);
+		
+			const napis = 'mamamija';
+			const dl = napis.length; //ilosc liter
+			const w = 20;	//rozmiar ramki
+			const wpio = w / 2;	//srodek wysokosci
+			const opozi = w / 2 - dl / 2;	//początek wyrazu w poziomie
+			let lp = 0; //nr kolejny litery
+
+			for (let i = 0; i < w; i++) {
+			    for (let j = 0; j < w; j++) {
+					if (i == 0 || i == w - 1 || j == 0 || j == w - 1)
+						document.write('*');
+					else {
+						if(i == wpio && j >= opozi && j < opozi + dl){
+							document.write(napis[lp++]);
+						} else
+							document.write('&nbsp;');	
+					}
+				}
+				document.write('<br>');
+			}
+            //petla for losowanie
+            let p2=p3=p5='';
+				for(i = 0; i < 100; i++) {
+					los = 100 + Math.floor(Math.random() * (500 - 100 + 1));
+					if (los % 2 == 0)
+						p2 += los + ', ';
+					if (los % 3 == 0)
+						p3 += los + ', ';
+					if (los % 5 == 0)
+						p5 += los + ', ';
+				}
+				//document.write('<table><tr><th>/2</th><th>/3</th><th>/5</th></tr>');
+				//document.write('<tr><td>' + p2 + '</td><td>' + p3 + '</td><td>' + p5 + '</td></tr></table>');
+				document.getElementById('p2').innerHTML = p2;
+				document.getElementById('p3').innerHTML = p3;
+				document.getElementById('p5').innerHTML = p5;
+            //petla for cwiczenia
+            const ileW = prompt('Podaj ilość wierszy', 13);
+			const ileK = prompt('Podaj ilość kolumn', 19);
+			if(ileW < 50 && ileK < 20) {
+				document.write('<table>');
+				for(w = 0; w < ileW; w++) {
+					document.write('<tr>');
+					for(k = 0; k < ileK; k++) {
+						const los = Math.floor(Math.random() * 256);
+						const r = Math.floor(Math.random() * 256);
+						const g = Math.floor(Math.random() * 256);
+						const b = Math.floor(Math.random() * 256);
+						//document.write('<td style="background-color: rgb('+r+','+g+','+b+');">' + los + '</td>');
+						document.write(`<td style="background-color: rgb(${r},${g},${b});">${los}</td>`); //rgb(200,45,255)
+					}
+					document.write('</tr>');
+				}
+				document.write('</table>');
+			} else
+				document.write('<p style="color: red">Za duża tabela. Proszę podać wartości wierszy < 50 i kolumny < 20</p>');
+        //tabliczka mnozenia
+        document.write('<h1>Tabliczka mnożenia</h1>');
+			document.write('<table>');
+			for(w = 1; w <= 10; w++){
+				document.write('<tr>');
+				for(k = 1; k <= 10; k++){
+					let ile = w * k;
+					document.write('<td>' + ile + '</td>');
+				}
+				document.write('</tr>');
+			}
+			document.write('</table>');
+        //array
+        //alert('JS working');
+        //deklaracja tablic - rozne sposoby
+        let t1 = new Array();
+        let t2 = [];
+        let t3 = new Array(10); //tab. 10-cio elementowa
+        let t4 = new Array('Marcin', 'Ania', 'Agnieszka');
+        let t5 = ['Marcin', 'Ania', 'Agnieszka'];
+
+        //wykorzystanie elementu tablicy
+        document.write('1 element tablicy t5: ' + t5[1] + '<br>') //wypisz się Ania
+
+        //dodawanie kolejnych elementow tablicy
+        let Tablica = new Array('Marcin', 'Ania', 'Agnieszka');
+        Tablica[3] = "Piotrek";
+        Tablica[4] = "Grzegorz";
+        document.write('Dodane imiona do tablicy: ' + Tablica[3] + ' i ' + Tablica[4] + '<br>'); //wypisze się "Piotrek i Grzegorz
+
+        //ilosc elementow w tablicy
+        let imiona = new Array('Marcin', 'Ania', 'Agnieszka', 'Piotrek', 'Grześ', 'Magda');
+        let dl2 = imiona.length;
+        for (x = 0; x < dl2; x++) {
+            document.write(imiona[x] + "<br>");
+        }
+
+        //tablica asocjacyjna
+        Tablica = new Array();
+        Tablica['chomik'] = "radioaktywny";
+        Tablica['kot'] = "zmutowany";
+        Tablica['pies'] = "Super Samson";
+        alert(Tablica['pies']);
+        Tablica['rybka'] = 'Wanda';
+
+                
+		//tablica dwuwymiarowa
+        Tablica = [];
+        Tablica[0] = ['Marcin', '183'];
+        Tablica[1] = ['Ania', '173'];
+        Tablica[2] = ['Agnieszka', '170'];
+        //...itp
+        document.write('<br>imie: ' + Tablica[0][0] + ', wzrost: ' + Tablica[0][1]); //wypisze się "imie: Marcin, wzrost: 183"
+        document.write('<br>imie: ' + Tablica[1][0] + ', wzrost: ' + Tablica[1][1]); //wypisze się "imie: Ania, wzrost: 173"
+        document.write('<br>imie: ' + Tablica[2][0] + ', wzrost: ' + Tablica[2][1]); //wypisze się "imie: Agnieszka, wzrost: 170"
+
+        //operacja join - sklejanie elementow tablicy do zmiennej tekstowej
+        var tablica = new Array("Marcin", "Ania", "Agnieszka")
+        document.write(tablica.join() + "<br>") //wypisze się "Marcin,Ania,Agnieszka"
+        document.write(tablica.join(" ") + "<br>") //wypisze się "Marcin Ania Agnieszka"
+        document.write(tablica.join(" + ") + "<br>") //wypisze się "Marcin + Ania + Agnieszka"
+
+        //odwrocenie elementow tablicy
+        var tablica = new Array("numer 1", "numer 2", "numer 3", "numer 4");
+        document.write('<strong>Przed:</strong> ' + tablica.join() + '<br>');
+        tablica.reverse();
+        document.write('<strong>Po:</strong> ' + tablica.join() + '<br>');
+
+        //sortowanie tablicy
+        Tablica = new Array('Marcin', 'Łucja', 'Ania', 'Piotrek', 'Grześ');
+        Tablica.sort();
+        document.write(Tablica.join() + '<br>'); //wypisze się "Ania,Grześ,Marcin,Piotrek,Łucja"
+
+        //tworzymy funkcję do sortowania liczb
+        function porownajLiczby(a, b) {
+            return a - b
+        }
+
+        Tablica = Array(100, 10, 25, 310, 1200, 400);
+
+        document.write('Bez sortowania:');
+        document.write(Tablica.join() + '<br>');
+
+        document.write('Tablica.sort():');
+        Tablica.sort()
+        document.write(Tablica.join() + '<br>');
+
+        document.write('Tablica.sort(porownajLiczby):');
+        Tablica.sort(porownajLiczby)
+        document.write(Tablica.join() + '<br>');
+
+        Tablica = new Array('Marcin', 'Ania', 'Agnieszka');
+        //tworzenie nowej tablicy przez wycinanie fragmentu innej tablicy
+        var Tablica_2 = Tablica.slice(0, 1)
+        document.write("Slice(0,1): " + Tablica_2.join() + "<br>"); //wypisze się "Marcin"
+
+        var Tablica_2 = Tablica.slice(0, 2)
+        document.write(Tablica_2.join() + '<br>'); //wypisze się "Marcin,Ania"
+
+        var Tablica_2 = Tablica.slice(0, 5);
+        document.write(Tablica_2.join() + '<br>'); //wypisze się "Marcin,Ania,Agnieszka"
+
+        var Tablica_2 = Tablica.slice(2, 1)
+        document.write(Tablica_2.join() + '<br>'); //wypisze się "Agnieszka"
+
+
+        //dodawanie ostatniego elementu do tablicy
+        var tablica = new Array('Marcin', 'Ania', 'Agnieszka');
+        document.write(tablica + '- tablica przed POP<br>');
+        var dlugosc = tablica.push('Grzegorz', 'Marta');
+
+        document.write(dlugosc + '- dlugosc po POP<br>'); //wypisze się 5
+        document.write(tablica + '- tablica po POP<br>'); //wypisze się "Marcin,Ania,Agnieszka,Grzegorz,Marta"
+
+        //usuwanie ostatniego elementu z tablicy
+        Tablica = new Array('Marcin', 'Ania', 'Agnieszka');
+        var element = Tablica.pop();
+
+        document.write(element + '<br>'); //wypisze się Agnieszka
+        document.write(Tablica + '<br>'); //wypisze się "Marcin,Ania"
+
+        //dodawanie pierwszego elementu do tablicy
+        Tablica = new Array('Marcin', 'Ania', 'Agnieszka');
+        var dlugosc = Tablica.unshift('Piotrek', 'Pawel');
+
+        document.write(dlugosc + '<br>'); //wypisze 5
+        document.write(Tablica + '<br>'); //wypisze się "Piotrek,Pawel,Marcin,Ania,Agnieszka"
+
+        //Usuwanie pierwszego elementu z tablicy
+        Tablica = new Array('Marcin', 'Ania', 'Agnieszka');
+        var element = Tablica.shift();
+
+        //usuwanie dowolnych elementow
+        let usuniete = Tablica.splice(1, 1); //usuwa od indeksu, ilosc elementow
+
+
+        document.write(element); //wypisze się Marcin
+        document.write(Tablica.join() + '<br>'); //wypisze się "Ania,Agnieszka"
+    //array for
+    document.write('<h1>Zwykła tablica</h1>');
+			const tab = ["Marcin", "Ania", "Agnieszka"];
+			document.write('<br><b>Zwykła pętla for:</b> ');
+			const dl3 = tab.length;
+			for(i = 0; i < dl3; i++){
+				document.write(tab[i] + ', ');
+			}
+			document.write('<br>');
+			document.write('<br><b>Pętla for in:</b> ');
+			for (const el in tab) { //el jest indeksem
+			    document.write(tab[el] + ', '); //"Marcin", "Ania"...
+			}
+			document.write('<br><b>Pętla for of:</b> ');
+			for (const x of tab) { //x jest wartoscią
+			    document.write(x + ', '); //"MARCIN"...
+			}
+			document.write('<br><b>Pętla forEach:</b> ');
+			tab.forEach(function(el){
+				document.write(el + ', ');
+			})
+			document.write('<br><b>forEach - funkcja strzałkowa: </b>');
+			tab.forEach(el => {
+				document.write(el + ',  ');
+			});
+
+			document.write('<h1>Tablica asocjacyjna</h1>');
+			let animals = new Array();
+			animals['chomik'] = "radioaktywny";
+			animals['kot'] = "zmutowany";
+			animals['pies'] = "Super Samson";
+
+			document.write('<br><b>Pętla for in:</b><br> ');
+			for (const index in animals) { //nazwy elementow tablicy
+			    document.write('[' + index + '] => ' + animals[index] + '<br>'); 
+			}
+			document.write('<br>');
+    //listofarray
+    const lista = new Array('Systemy','DOS','Windows','Linux','Mac OS', 'Android');
+			document.write('<ol>');
+			const dl4 = lista.length;
+			document.write('<li>' + lista[0] + '<ul>');
+			//document.write(`<li>${lista[0]}<ul>`);
+			for(i = 1; i < dl4; i++){
+				document.write('<li>' + lista[i] + '</li>');
+			}
+			document.write('</ul></li></ol>');
+    //list of array 2
+    let lista2 = new Array();
+			lista2['Systemy'] = new Array('DOS','Windows','Linux','Mac OS');
+			lista2['Języki programowania'] = new Array('C++','Python','C#','Java');
+			lista2['Platformy'] = new Array('PC','Android','Mac');
+{		
+			document.write('━─━────༺༻────━─━<ol>');
+			for(const i in lista2){
+				document.write(`<li>${i}`);
+				document.write('<ul>');
+				for(const el of lista2[i])
+					document.write(`<li>${el}</li>`);
+				document.write('</ul></li>')
+			}
+			document.write('</ol>━─━────༺༻────━─━');
+}
+    //getelementbyid
+    const kolor = prompt("podaj kolor tekstu","red");
+			const tlo = prompt("podaj kolor tla","blue");
+			document.body.style.backgroundColor = tlo;
+			document.getElementById('h').style.color  = kolor;
+			//po petlach i tablicach
+			//const pTab = document.getElementsByTagName('p');
+			const pTab = document.getElementsByClassName('p1');
+			for(i = 0; i < pTab.length; i++)
+				pTab[i].style.color = kolor;
+			//to samo inaczej
+			for(const elP of pTab) {
+				elP.style.color = kolor;
+			}
+    //pętla do...while
+			let los;
+			do {
+				los = Math.floor(Math.random() * 256);
+				if(los > 50 && los < 75)
+					continue;
+				document.write(los + ", ");
+				//break;
+			} while(los < 200);
+			//skrypt pyta o liczby i je drukuje dopoki sa one rozne od 0 i 13
+			do {
+				var liczba = prompt("Podaj liczbę");
+				document.write(`${liczba}, `);
+			} while(liczba != 0 && liczba != 13);
+
+	//petla while
+			var x = 13;
+			while(x != 13){
+				alert('super');
+			}
+    //array cwiczenie 3
+    //alert('JS working');
+			//deklaracja tablic - rozne sposoby
+			var t1 = new Array();
+			var t2 = [];
+			var t3 = new Array(10); //tab. 10-cio elementowa
+			document.write(t3.join() + '<br><br>');
+			//--------------------------------------------
+			document.write('<h1>10 losowych liczb</h1>');
+			for(i = 0; i < 10; i++)
+				t1[i] = Math.floor(Math.random() * 256);
+			document.write(t1.join() + '<br><br>');
+			//--------------------------------------------
+			document.write('<h1>Liczby losowe z zakresu 50 - 200</h1>');
+			los = Math.floor(Math.random() * 256);
+			while(los > 50 && los < 200) {
+					t2.push(los);
+					los = Math.floor(Math.random() * 256);
+			}
+			document.write(t2.join(' - ') + '<br><br>');
+			//--------------------------------------------
+			function porownajLiczby(a, b) {
+				return a - b;
+			}
+			document.write('<h1>10 parzystych liczb</h1>');
+			let i = 0;
+			do {
+					los = Math.floor(Math.random() * 256);
+					if(los % 2 == 0)
+					{
+						t3[i] = los;
+						i++;
+					}
+					
+			} while (i < 10);
+			t3.sort(porownajLiczby);
+			document.write(t3.join(' - ') + '<br><br>');	
+    //funkcje
+    //bardzo prosta
+			function witaj() {
+				document.write('<h1>Witaj w JS</h1>');
+			}
+			
+			witaj();
+
+			//z parametrem
+			function witaj2(kolor)	{
+				document.write('<h1 style="color: ' + kolor + '">Witaj w JS</h1>');
+			}
+			//alert(kolor); // błąd, bo kolor jest lokalną zmienną funkcji witaj2()
+			witaj2('red');
+			let k = 'blue';
+			witaj2(k);
+
+			function witaj3(imie, kolor)	{
+				return '<h1 style="color: ' + kolor + '">Witaj w JS ' + imie + '</h1>';
+			}
+			document.write(witaj3('Janusz', 'green'));
+
+			let powitanie = witaj3('Euzebia', k);
+			document.write(powitanie);
+
+			alert(witaj3('Janusz', 'green'));
+			document.write(witaj3(prompt('Podaj imię','Jasiu'),prompt('Podaj kolor','red')));
+    //funkcje onclik
+    function losuj() {
+				let losy = '';
+				for(i = 0; i < 10; i++){
+					losy += Math.floor(Math.random() * 256) + ', ';
+				}
+				alert(losy);
+			}
+			//zrobic 3 guziczki 'losuj 10', 'losuj 5' i 'losuj 1'
+			function losuj2(ile) {
+				let losy = '';
+				for(i = 0; i < ile; i++){
+					losy += Math.floor(Math.random() * 256) + ', ';
+				}
+				alert(losy);
+			}
+        //funkcje objekt
+            //klikniecie w button
+			const btn = document.querySelector("button");
+			btn.addEventListener("click", function() {
+			    alert('Witaj w JavaScript');
+			})
+
+			//klikniecie w h1, podmiana zawartości
+			document.getElementById('name').onclick = (e) => {
+				e.target.textContent = prompt('Podaj imie');
+			};
+
+			//najechanie na listę li, pobiera dane z data-
+			for (const element of document.querySelectorAll('#menu li')) {
+				element.onmouseenter = () => {
+					const opis = document.getElementById('opis');
+					const val = element.getAttribute('data-val');
+					opis.textContent = val;				
+				}
+			}
+
+			//klikniecie w obrazek
+			const img = document.querySelectorAll("#galeria img");
+            img.forEach(el => el.addEventListener('click', event => {
+                document.getElementById('opis').textContent = event.target.getAttribute("src");
+            }));            
+
+			//https://kursjs.pl/kurs/events/events.php
+        //funkcja anonimowa
+            // Deklaracja tablicy z 5 numerami
+            var tablica = [2, 3, 4, 5, 10];
+
+            //Wykorzystanie funkcji forEach i przekazanie do niej anonimowej funkcji wypisujÄcej kaĹźdÄ liczbÄ pomnoĹźonÄ przez 2
+            tablica.forEach(function (liczba) {
+                //Wypisanie w konsoli nowej wartoĹci
+                console.log(liczba * 2);
+                document.write(liczba + ', ');
+            });
+        //funkcja onmouseover
+        function kolor(kol)
+			{
+				/*const obj = document.getElementById('ak1');
+				obj.style.color = kol;
+				*/
+				const ob = document.getElementsByTagName('p');
+				for(let i = 0; i < ob.length; i++)
+					ob[i].style.color = kol;
+			}
+        //funkcja losuj
+        function losuj() {
+				//const ile = document.getElementById('ilosc').value;
+				const ile = ilosc.value;
+				let liczby = '';
+				if(ile > 0 && ile != '') {
+					for(i = 0; i < ile; i++) {
+						los = Math.floor(Math.random() * 1000);
+						liczby += los + ', ';
+					}
+					const txt = document.createTextNode(liczby);
+					document.getElementById('konsola').appendChild(txt);
+					const br = document.createElement("br");
+					document.getElementById('konsola').appendChild(br);
+					ilosc.value = '';
+					//document.getElementById('ilosc').value = '';
+					document.getElementById('ilosc').focus();
+				} else {
+					const txt = document.createTextNode('błędne dane');
+					document.getElementById('konsola').appendChild(txt);
+					const br = document.createElement("br");
+					document.getElementById('konsola').appendChild(br);
+					ilosc.value = '';
+					//document.getElementById('ilosc').value = '';
+					document.getElementById('ilosc').focus();
+				}
+			}
+			function czysc() {
+				document.getElementById('konsola').innerHTML = '';
+				document.getElementById('ilosc').focus();
+			}
+			function check(key){
+				return (key >= '0' && key <= '9') || key == 'ArrowLeft' || key == 'ArrowRight' || key == 'Delete' || key == 'Backspace'  ;
+			}
+        //kolory set atribute
+            function zmien_opcje(nr) {	
+            const naszaLista = document.getElementById('lista1');
+            const kolekcjaElementowLI = naszaLista.getElementsByTagName('a');
+
+            for (let i = 0; i < kolekcjaElementowLI.length; i++)		{
+                if (i == nr)	{
+                    kolekcjaElementowLI[i].setAttribute("style", "text-transform: uppercase; color: red; font-weight: bold;");
+                } else {
+                    kolekcjaElementowLI[i].setAttribute("style", "text-transform: none;");
+                }
+            }
+        }
+    //funkcja instrukcja with
+    function zmien_kwadrat(){
+				const k = document.getElementById("kwadrat");
+				if (k.style.backgroundColor == "red") {
+					with(k.style) {
+						backgroundColor = "yellow";			
+						width = "200px";			
+						height = "200px";			
+					}
+				} else {
+					with (k.style) {
+						backgroundColor = "red";			
+						width = "400px";			
+						height = "400px";			
+					}
+				}
+			}
+			function changeSize(how) {
+				const k = document.getElementById("kwadrat");
+				let width = parseInt(k.style.width);
+				let height = parseInt(k.style.height);
+				if(how == 'up'){
+					 height += 25; //height = height + 25;
+					 width += 25;
+				} else {
+					width -= 25;
+					height -= 25;
+				}
+				k.style.width = width +'px';
+				k.style.height = height + 'px';
+			}
+    //formularze
+    //CALY FORMULARZ
+                // <script>
+                //         function los(){
+                //             const los = Math.floor(Math.random() * 256);
+                //             document.getElementById('h1').innerText = los; 
+                //         }
+                //     <//script>
+                //     <style>
+                //         input {
+                //             padding: 5px;
+                //             text-align: right;
+                //         }
+                //         h1 {
+                //             cursor: default;
+                //         }
+                //     </style>
+                // </head>
+                // <body>
+                //     <h1>JavaScript - 23 formularze</h1>
+                //     <form>
+                //         Tekst <input type="text" id="dane" autofocus maxlength="20">
+                //         Kolor <input type="text" id="kolor" maxlength="10">
+                //         <button>Odbierz</button>
+                //         <h1 id="h1" onClick="los();">?</h1>
+                //         <h1 id="toTu"></h1>
+                //     </form>
+                // </body>
+                // <script>
+                //     const btn = document.querySelector('button');
+                //     btn.addEventListener('click', (e) => {
+                //         let tekst = document.getElementById("dane").value;
+                //         //let tekst = dane.value;
+                //         //let kol = document.getElementById("kolor").value;
+                //         let kol = kolor.value;
+                //         if(kol == '')
+                //             kol = 'red';
+                //         if(tekst == '')
+                //             tekst = 'ZS nr 2';
+                //         document.getElementById('toTu').innerText = tekst; 
+                //         document.getElementById("toTu").style.color = kol;
+
+                //         e.preventDefault(); //blok przeladowania strony
+                //     })
+                // <//script>
+    //formularzNAME
+            // <script>
+            //         function wyslij()	{
+            //             const imie = document.forms.formularz1.pole1.value;
+            //             alert(imie);
+            //         }
+            //     <//script>
+            // </head>
+            // <body>
+            //     <form name="nazwaFormularza">
+            //     <fieldset><legend>Podaj imię i nazwisko</legend>	    
+            //         <input type="text" name="poleFormularza" value="Janusz">
+            //         <button>ok</button>
+            //         <!--<button onClick="wyslij();">ok</button>-->
+            //     </fieldset>
+            //     </form>
+            //     <script>
+            //         const btn = document.querySelector("button");
+
+            //         btn.addEventListener("click", function() {
+            //             const imie = document.forms.nazwaFormularza.poleFormularza.value;
+            //             alert(imie);
+            //         })
+            //     <//script>
+            // </body>
+    //array cwiczenia imiona
+            // <script>
+            //         let imiona = new Array('Marcin','Ania','Agnieszka','Basia','Zosia');
+            //         //sprawdzenie czy istnieje imie
+            //         function sprawdz() {
+            //             var imieForm = imie.value;
+            //             alert(imieForm)
+            //             let jest = false;
+            //             for(i = 0; i < imiona.length; i++)
+            //                 if(imieForm == imiona[i])
+            //                     jest = true;
+            //             if(jest)
+            //                 alert(`Imię ${imieForm} jest już w bazie`);
+            //             else {
+            //                 alert('Imienia ' + imieForm + ' nie ma  w bazie ale już dodano :)');
+            //                     imiona.push(imieForm);
+            //             }
+            //         }
+            //         function pokazImiona() {
+            //             imiona.sort();
+            //             for(i = 0; i < imiona.length; i++) {
+            //                 const txt = document.createTextNode(imiona[i] + ', ');
+            //                 document.getElementById('konsola').appendChild(txt);
+            //             }
+            //             const txt = document.createElement('br');
+            //             document.getElementById('konsola').appendChild(txt);
+            //         }
+            //     <//script>
+            // </head>
+            // <body onLoad="document.getElementById('imie').focus();">
+            //     <h1>JavaScript - tablice</h1>
+            //     Podaj imię <input type="text" id="imie"> 
+            //     <button onClick="sprawdz();">Sprawdź</button>
+            //     <button onClick="pokazImiona();">Pokaż imiona</button>
+            //     <div id="konsola"></div>
+            // </body>
+    //ZGADNIJ LICZBE
+                // <title>Zgadnij liczbę</title>
+                    
+                //     <script>
+                //         function losuj() {
+                //             return Math.ceil(Math.random() * 101);
+                //         }
+                        
+                //         function check() {
+                //             let liczba = document.losowanie.liczba.value;
+                //             if(liczba == '' || parseInt(liczba) != liczba) 
+                //                 liczba = 0;	//jesli nie podano nic to przymujemy zero
+                //             //alert(liczba)
+                //             const txt = document.createTextNode(liczba + ', ');
+                //             document.getElementById('konsola').appendChild(txt);
+                //             if (liczba > z)
+                //                 document.getElementById('opis').innerHTML = 'Za duża';
+                //             else if (liczba < z)
+                //             document.getElementById('opis').innerHTML = 'Za mała';
+                //             else
+                //             document.getElementById('opis').innerHTML = 'BRAVO';
+                            
+                //             document.losowanie.liczba.value = '';
+                //             document.losowanie.liczba.focus();
+                //             }
+                //     <//script>
+                //     <style>
+                //         body {
+                //             margin: 1em auto;
+                //             background-color: black;
+                //             color: orange;
+                //         }
+                        
+                //         input {
+                //             background-color: black;
+                //             color: white;
+                //             padding: 0.5em;
+                //         }
+                //         .btn {
+                //             padding: 0.5em 2em;
+                //             background-color: orange;
+                //             color: black;
+                //             padding: 0.5em;
+                //         }
+                        
+                //     </style>
+                // </head>
+                // <body onload="z = losuj(); document.losowanie.liczba.focus();">
+                //     <form name="losowanie" style="width: 700px; margin: 0 auto;">
+                //         <fieldset><legend><h1>Z G A D U L A</h1></legend>
+                //             <p>Została wylosowana liczba z zakresu 0-100. Zgadnij ją :)</p>
+                //             <label for="liczba">Podaj liczbę:  </label>
+                //             <input type="number" name="liczba" min="0" max="100">  <span id="opis">strzelaj</span> 
+                //             <input class="btn" type="button" value="sprawdź" onclick="check();">
+                //             <input class="btn" type="button" value="losuj nową" onclick="location.reload();">
+                //         </fieldset>
+                //     </form>
+                //     <fieldset id="konsola" style="width: 700px; margin: 0 auto;"><legend>Zgadywane liczby</legend></fieldset>
+                // </body>
+        //SPRAWDZ HASLO
+            //         <script>
+            //         alert('parseInt("a"): ' + parseInt('a'))
+            //         function sprawdz(){
+            //             //dobre: ponad 7 znaków i conajmniej 1 cyfra
+            //             //srednie: 4-6 znaków i conajmniej 1 cyfra
+            //             //slabe: reszta
+            //             //var pass = document.getElementById('haslo').value;
+            //             const pass = haslo.value;
+            //             const dl = pass.length;
+            //             let cyfra = false;
+            //             let kom = '';
+            //             for(i = 0; i < dl; i++)
+            //                 if(pass[i] == parseInt(pass[i]))
+            //                     cyfra = true;
+            //             if(cyfra == true && dl > 7)
+            //                 kom = 'dobre';
+            //             else if(cyfra == true && dl >= 4 && dl <= 6)
+            //                 kom = 'średnie'
+            //             else
+            //                 kom = 'słabe';
+
+            //             document.getElementById('komunikat').innerHTML = kom;
+            //         }
+            //     <//script>
+            // </head>
+            // <body>
+            //     <label for="haslo">Podaj hasło:</label>
+            //     <input type="password" id="haslo">
+            //     <button onClick="sprawdz();">Sprawdź</button>
+
+            //     <div id="komunikat"></div>
+            // </body>
+        //GALERIA
+            //     <script>
+            //         function foto(nr){
+            //             document.getElementById('big').src="galeria/gal0" + nr + ".jpg"; //gal01.jpg
+            //         }
+            //     <//script>
+            // </head>
+            // <body>
+            //     <div id="top">
+            //         <div class="tRow">
+            //             <header id="logo">
+            //                 <h1>foto Galeria</h1>
+            //                 <p>&copy; by Jacquar '2018</p>
+            //             </header>
+            //         </div>
+            //         <div class="tRow">
+            //             <nav id="menu">
+            //                 <img class="mini" src="galeria/gal01_resize.jpg" alt="" onclick="foto(1);">
+            //                 <img class="mini" src="galeria/gal02_resize.jpg" alt="" onclick="foto(2);">
+            //                 <img class="mini" src="galeria/gal03_resize.jpg" alt="" onclick="foto(3);">
+            //                 <img class="mini" src="galeria/gal04_resize.jpg" alt="" onclick="foto(4);">
+            //                 <img class="mini" src="galeria/gal05_resize.jpg" alt="" onclick="foto(5);">
+            //             </nav>
+                        
+            //             <section id="tresc">
+            //                     <img class="big" src="galeria/gal03.jpg" alt="" id="big">
+            //         </section>
+            //         </div>
+            //     </div>
+            //     <script>
+            //         const img = document.querySelectorAll(".mini");
+
+            //         img.forEach(el => el.addEventListener('click', () => {
+            //             let srcImg = (event.target.getAttribute("src")).substring(0,13) + '.jpg';
+            //             document.getElementById('big').src = srcImg;
+            //         }));
+            //     <//script>
+    //STRINGI
+    
+			//alert("JavaScript działa!!!");
+			let tekst = "Ala ma kota Łukszę, a Ola ma psa Jaźń";
+			document.write(tekst);
+			
+			document.write('<h1>Length - długość tekstu</h1>');
+			let dlugosc = tekst.length;
+			
+			document.write('<h1>charAt - znak na pozycji</h1>');
+			document.write('trzecia litera - ' + tekst.charAt(2) + '<br>'); //wypisze się "a" bo stringi indeksowane są od 0, lub tablicowo tekst[2]
+			document.write('ostatnia litera - ' + tekst.charAt(dlugosc - 1) + '<br>'); //wypisze się ostatnia litera tekstu czyli "a"
+			
+			document.write('<h1>charCodeAt - kod ASCII znaku</h1>');
+			document.write('kod ASCII pierwszej litery - ' + tekst.charCodeAt(0) + '<br>'); //wypisze się 65 (A)
+			document.write('kod ASCII piątej litery - ' + tekst.charCodeAt(12) + '<br>'); //wypisze się 321 (Ł)
+			
+			document.write('<h1>toUpperCase, toLowerCase - zmiana wielkości liter </h1>');
+			document.write(tekst.toUpperCase() + '<br>'); //wypisze sie ALA MA KOTA
+			document.write(tekst.toLowerCase() + '<br>'); //wypisze sie ala ma kota
+			
+			
+			document.write('<h1>Znaki od .. do</h1>');	//substring(start, stop)
+			document.write('znaki od 3 do 7 - ' + tekst.substring(2,6) + '<br>');  //wypisze sie ma
+			document.write('znaki od 4 do konca - ' + tekst.substring(3) + '<br>'); //wypisze sie ma kota
+			
+			let str = "1234567890";
+  			document.write('1234567890 - substring(2, 6)' + str.substring(2, 6));	//3456
+
+			document.write('<h1>Znaki od, ilość</h1>');	//substr(start, dlugosc) 
+			document.write('od 2 znaku 4 znaki - ' + tekst.substr(1,4) + '<br>'); //wypisze sie 'la m' 
+			document.write('od 5 znaku 8 kolejnych - ' + tekst.substr(4,8)); //wypisze sie ma kota
+			
+  			document.write('1234567890 - substr(2,4)' + str.substr(2, 4));	//3456
+
+			document.write('<h1>Pozycja szukanego tekstu</h1>'); 
+			document.write('Pozycja ciągu kot: ' + tekst.indexOf('kot', 0) + '<br>'); //wypisze sie liczba oznaczająca pozycję ciągu kot
+			document.write('Ostatnie wystąpienie słowa ma - ' + tekst.lastIndexOf('ma') + '<br>'); 
+	
+			document.write('<h1>podmiana fragmentu tekstu</h1>');
+			let zamieniony = tekst.replace("Ala","Ola");
+			let zamieniony2 = tekst.replaceAll("a","@");
+			document.write('Zmieniony tekst: ' + zamieniony + "<br>");
+			document.write('Zmieniony tekst: ' + zamieniony2 + "<br>");
+
+			document.write('<h1>zmiana tekstu na tablicę</h1>');
+			let tablica = tekst.split(' ');
+			tablica.forEach(function(slowo){
+				document.write(slowo + '<br>')
+			})
+			
+			document.write('<h1>zmiana tablicy na tekst</h1>');
+			let nowy = tablica.join();
+			document.write(nowy + '<br>')
+			let nowy2 = tablica.join('-');
+			document.write(nowy2 + '<br>')
+
+			document.write('<h1>escapowanie - "kodowanie" tekstów</h1>');
+			document.write('Przed: ' + tekst + '<br>');
+			document.write('Po: ' + escape(tekst) + '<br>');
+			
+			tekst = escape(tekst);
+			document.write('Przed: ' + tekst + '<br>');
+			tekst = unescape(tekst);
+			document.write('Po: ' + tekst + '<br>');
+	//stringi cwiczenia
+        function pionowy()	{
+				//alert('ok')
+				const t = tekst.value;
+				const dl = t.length;
+				document.getElementById('ramka').innerHTML = '';
+				for (i = 0; i < dl; i++)	{
+					document.getElementById('ramka').innerHTML += t[i] + '<br>';
+				}
+			}
+			function garbaty(tekst)	{
+				let nowy = '';
+				let dl = tekst.length;
+				for(i = 0; i < dl; i++)
+					if(i % 2)
+						nowy += tekst.charAt(i).toUpperCase();
+					else
+						nowy += tekst[i].toLowerCase();
+				document.getElementById('ramka').innerHTML = nowy;
+			}
+			function szukaj()	{
+				let tekst = document.getElementById('tekst').value;
+				let szukany = prompt('Co szukać?', 'tu wpisz');
+				let poz = tekst.indexOf(szukany);
+				if(poz < 0)
+					alert('Brak tego tekstu');
+				else
+					alert('Znaleziono na apozycji ' + poz);
+			}
+			function wytnij()	{
+				let tekst = document.getElementById('tekst').value;
+				let odZnaku = prompt('Od którego znaku?', 'tu wpisz');
+				let doZnaku = prompt('Do którego znaku?', 'tu wpisz');
+				let nowy = tekst.substring(odZnaku, doZnaku)
+				document.getElementById('ramka').innerText = nowy;
+			}
+			function jakWZdaniu(tekst)	{
+				let nowy = '';
+				nowy += tekst.charAt(0).toUpperCase();
+				nowy += tekst.substring(1).toLowerCase();
+				return nowy;
+			}
+    //SETINVERTAL - ZMIANA KOLORU PO CZASIE
+    function stop(){
+            clearInterval(kol);
+            document.getElementById('start').style.display = 'inline';
+            document.getElementById('stop').style.display = 'none';
+         }
+         function start(){
+           kol = setInterval(function() {
+                 kolory();
+            }, 1000);
+            document.getElementById('stop').style.display = 'inline';
+            document.getElementById('start').style.display = 'none';
+         }
+         function kolory(){
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            document.getElementById('box').style.backgroundColor = 'rgb('+r+','+g+','+b+')'; // color: rgb(230,56,23) `rgb(${r},${g},${b})`
+         }
+         let kol = setInterval(function() {
+            kolory();
+         }, 1000); //czas w ms
+    
+    
+     //TIMEOUT
+        let myVar;
+			function start() {
+				document.getElementById('stop').style.display = 'inline';
+				document.getElementById('start').style.display = 'none';
+			  	myVar = setTimeout(function(){
+			  		document.getElementById('box').innerText = 'Helloł ;)';
+				}, 5000); //po czasie w ms
+			}
+
+			function stop() {
+			  clearTimeout(myVar);
+			  document.getElementById('start').style.display = 'inline';
+			  document.getElementById('stop').style.display = 'none';
+			}
+    </script>
+</html>

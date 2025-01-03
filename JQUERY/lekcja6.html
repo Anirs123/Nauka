@@ -1,0 +1,79 @@
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script>
+            $(function(){
+                $("#menu p").hover(function () {
+                    $(this).css({'background-color' : 'lightgray', 'font-weight' : 'bolder'});
+                  }, function () {
+                    let cssObj = {
+                          'background-color' : 'black',
+                          'font-weight' : '',
+                          'color' : 'yellow'
+                    }
+                    $(this).css(cssObj);
+                  });
+                //alert('jQuery live');
+                $('#menu p').click(function(){
+                    let stan = $(this).next('ul').css('display');
+                    $('#menu ul').slideUp('slow');
+                    $('#menu p').css({'color':'yellow', 'font-weight':'none'});
+                    if (stan == 'none') {
+                            $(this).next().slideDown('slow');
+                            $(this).css({'color':'red', 'font-weight':'bold'});
+                    } else {
+                            $(this).next().slideUp('slow');
+                    }
+                }); //end p.click
+            }); //end jQ
+        </script>
+        <style>
+        #menu {
+            border: 0;
+            width: 200px;
+            margin: 0;
+        }
+        #menu p {
+            padding: 5px;
+            color: yellow;
+            background-color: black;
+            margin: 0;
+            cursor: default;
+        }
+        #menu ul {
+            padding: 5px;
+            color: white;
+            background-color: darkgray;
+            margin: 0;
+        }
+        </style>
+        </head>
+        <body>
+        <div id='menu'>
+            <p>To jest tekst do kliknięcia</p>
+            <ul  style="display: none;">
+                <li>Lista 1</li>
+                <li>Lista 2</li>
+                <li>Lista 3</li>
+                <li>Lista 4</li>
+                <li>Lista 5</li>
+            </ul>
+            <p>To jest tekst do kliknięcia</p>
+            <ul  style="display: none;">
+                <li>Lista 1</li>
+                <li>Lista 2</li>
+                <li>Lista 3</li>
+                <li>Lista 4</li>
+                <li>Lista 5</li>
+            </ul>
+            <p>To jest tekst do kliknięcia</p>
+            <ul  style="display: none;">
+                <li>Lista 1</li>
+                <li>Lista 2</li>
+                <li>Lista 3</li>
+                <li>Lista 4</li>
+                <li>Lista 5</li>
+            </ul>
+        </div>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf8">
+		<title>JavaScript 05 FOR - działania</title>
+		<style>
+*{
+	font-family: 'Courier New', Courier, monospace;
+}
+
+		</style>
+		<script>
+			/*let str = '<br>';
+			for (w = 0; w < 10; w++) {
+			    for (k = 0; k < 15; k++) {
+			        	str += '*';
+			    }
+			    str += "<br>";
+			}
+			document.write(str);
+		*/
+		
+		/*const ileK = parseInt(prompt("podaj ile chcesz kolumn"));
+		const ileW = parseInt(prompt("podaj ile chcesz wierszy"));
+		const z = prompt("z jakich znakow");
+		let str = '<br>';
+			for (w = 0; w < ileW; w++) {
+			    for (k = 0; k < ileK; k++) {
+			        	str += `${z}`;
+			    }
+			    str += "<br>";
+			}	document.write(str);
+		*/
+		/*
+			const w = 15;
+			for (i = 0; i < w; i++) {
+			    for (j = 0; j < w; j++) {
+					if (i == 0 || i == w - 1 || j == 0 || j == w - 1)
+						document.write('*');
+					else{
+							document.write('&nbsp;');	
+					}
+				}
+				document.write('<br>');
+			}
+		*/
+		const napis = 'mama';
+			const dl = napis.length; //ilosc liter w zmiennej napis
+			const w = 20;	//rozmiar ramki
+			const wpio = w / 2;	//srodek wysokosci
+			const opozi = w / 2 - dl / 2;	//początek wyrazu w poziomie
+			let lp = 0; //nr kolejny litery
+
+			for (i = 0; i < w; i++) {
+			    for (j = 0; j < w; j++) {
+					if (i == 0 || i == w - 1 || j == 0 || j == w - 1)
+						document.write('*');
+					else {
+						if(i == wpio && j >= opozi && j < opozi + dl){
+							document.write(napis[lp++]); //wypisze litery zmiennej napis po kolei
+						} else
+							document.write('&nbsp;');	
+					}
+				}
+				document.write('<br>');
+			}
+		</script>
+	</head>
+	<body>
+<pre>
+	▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄▄▄    ▄▄▄▄▄▄▄ ▄▄▄▄▄▄  ▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄   
+	█       █       █  █▄█  █       █  █       █      ██   █       █       █   ▄  █  
+	█▄     ▄█    ▄▄▄█       █▄     ▄█  █    ▄▄▄█  ▄    █   █▄     ▄█   ▄   █  █ █ █  
+	  █   █ █   █▄▄▄█       █ █   █    █   █▄▄▄█ █ █   █   █ █   █ █  █ █  █   █▄▄█▄ 
+	  █   █ █    ▄▄▄██     █  █   █    █    ▄▄▄█ █▄█   █   █ █   █ █  █▄█  █    ▄▄  █
+	  █   █ █   █▄▄▄█   ▄   █ █   █    █   █▄▄▄█       █   █ █   █ █       █   █  █ █
+	  █▄▄▄█ █▄▄▄▄▄▄▄█▄▄█ █▄▄█ █▄▄▄█    █▄▄▄▄▄▄▄█▄▄▄▄▄▄██▄▄▄█ █▄▄▄█ █▄▄▄▄▄▄▄█▄▄▄█  █▄█
+</pre>
+	</body>
+</html>

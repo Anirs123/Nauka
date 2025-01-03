@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf8">
+		<title>JavaScript 05 FOR - działania</title>
+	</head>
+	<body>
+		<script>
+			const lista = new Array('System', 'DOS', 'Windows', 'Linux', 'MAC OS', 'ANDROID', 'IOS');
+			const dl = lista.length-1;
+
+			const lista2 = lista.slice(0, 1);
+        	let usuniete = lista.splice(0, 1);
+
+			document.write(`<ol> <li> ${lista2} <ul>`)
+			for(i = 0; i < dl; i++){
+				document.write(`<li> ${lista[i]} </li>`)
+			}
+			document.write(`</ul> </li> </ol>`)
+
+			const lista1 = new Array();
+			lista1['Systemy'] = new Array('DOS', 'Windows', 'Linux', 'MAC OS', 'ANDROID', 'IOS');
+			lista1['Jezyki programaowania'] = new Array('C++', 'HTML', 'CSS', 'JS', 'JAVA');
+			lista1['Platformy'] = new Array('PC', 'Android', 'MAC');
+
+			document.write(`<ol>`)
+			for(const a in lista1){
+				document.write(`<li>${a}`);
+					document.write('<ul>');
+						for(const el of lista1[a])
+							document.write(`<li>${el}</li>`);
+						document.write('</ul></li>')
+			}
+			document.write(`</ol>`)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf8">
+		<title>JavaScript 12</title>
+		<script>
+function zmien_kwadrat(){
+				const k = document.getElementById("kwadrat");
+				if (k.style.backgroundColor == "red") {
+					with(k.style) {
+						backgroundColor = "yellow";			
+						width = "200px";			
+						height = "200px";			
+					}
+				} else {
+					with (k.style) {
+						backgroundColor = "red";			
+						width = "400px";			
+						height = "400px";			
+					}
+				}
+			}
+			function changeSize(how) {
+				const k = document.getElementById("kwadrat");
+				let width = parseInt(k.style.width);
+				let height = parseInt(k.style.height);
+				if(how == 'up'){
+					 height += 25; //height = height + 25;
+					 width += 25;
+				} else {
+					width -= 25;
+					height -= 25;
+				}
+				k.style.width = width +'px';
+				k.style.height = height + 'px';
+			}
+		</script>
+	</head>
+	<body>
+		<style>
+			body{
+				margin: 3em;
+			}
+			#kwadrat{
+				margin: 2em;
+				background-color: red;
+				width: 400px;
+				height: 400px;
+			}
+			button{
+				margin: 1em;
+			}
+		</style>
+		<div>
+			<button onclick="changeSize('up');">+</button>&nbsp;&nbsp;
+			<button onclick="changeSize('down');">-</button>
+		</div>
+		<div id="kwadrat" onclick="zmien_kwadrat();"></div>
+	</body>
+</html>
