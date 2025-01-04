@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <style>
+        [class*="col"]{
+            padding: 1rem;
+            background-color: rgb(122, 122, 228);
+            border: 2px solid #fff;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- .container tworzy nam kontener -->
+    <div class="container-lg my-5">
+        <!-- my-5 to margines z y czyli *-top *-bottom ustawione na 5 -->
+        <!-- container-fluid usuwa margines od boku -->
+        <!-- container-md na srednim usuwa kontener -->
+        <div class="row">
+            <div class="col">1</div>
+            <div class="col">2</div>
+            <div class="col">3</div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">1</div>
+            <div class="col-md-4">2</div>
+            <!-- suma md nie moze przekraczac 12 (8+4) -->
+        </div>
+        <div class="row">
+            <div class="col-8">1</div>
+            <div class="col-4">2</div>
+            <!-- na sztywno 4 i 8 nie wazne od rozmiaru okna -->
+        </div>
+    </div>
+
+    <h2 class="text-center">Przykład 2</h2>
+    <div class="container-lg">
+        <!-- container-fluid usuwa margines od boku -->
+        <!-- container-md na srednim usuwa kontener -->
+        <div class="row">
+            <div class="col">1</div>
+            <div class="col">2</div>
+            <div class="col">3</div>
+        </div>
+        <div class="row">
+            <div class="col">1</div>
+            <div class="col">2</div>
+        </div>
+    </div>
+
+    <h2 class="my-5 text-center">Przyklad 3</h2>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">1</div>
+            <div class="col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">2</div>
+            <div class="col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">3</div>
+            <div class="col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">4</div>
+            <div class="col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">5</div>
+            <div class="col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">6</div>
+            <div class="col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">7</div>
+            <div class="col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">8</div>
+            <div class="col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">9</div>
+            <div class="col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">10</div>
+            <div class="col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">11</div>
+            <div class="col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">12</div>
+        </div>
+    </div>
+
+    <h2 class="text-center my-5">Gutter</h2>
+    <!-- guttery robią ostęp między columnami -->
+    <div class="container">
+        <div class="row g-5">
+            <!-- odstep 5 -->
+            <!-- guttery mozna dawac na x i y czyli gx-5 -->
+            <div class="col-6">1</div>
+            <div class="col-6">2</div>
+            <!-- tutaj mamy juz 12 czyli przejdzie do nowej linijki -->
+            <div class="col-6">3</div>
+            <div class="col-6">4</div>
+        </div>
+    </div>
+    <!-- popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>
